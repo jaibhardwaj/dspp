@@ -1,4 +1,4 @@
-package dev.jaib.ds.pep.functionsandarrays;
+package dev.jaib.ds.pep.beginner.functionsandarrays;
 
 public class FunctionAndArraysMain
 {

@@ -1,4 +1,4 @@
-package dev.jaib.ds.pep.gettingstarted;
+package dev.jaib.ds.pep.beginner.gettingstarted;
 
 import java.util.ArrayList;
 import java.util.List;
