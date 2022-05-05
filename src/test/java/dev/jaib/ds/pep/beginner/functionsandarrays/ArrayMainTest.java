@@ -25,4 +25,10 @@ public class ArrayMainTest
 	{
 		assertArrayEquals(new int[]{1, 4, 2, 1, 8, 6}, ArrayMain.sumOfTwoArray(new int[]{ 3, 1, 0, 7, 5}, new int[]{ 1, 1, 1, 1, 1, 1}));
 	}
+
+	@Test
+	public void diffOfTwoArrayTest()
+	{
+		assertArrayEquals(new int[]{ 0, 7, 3, 3 }, ArrayMain.diffOfTwoArray(new int[]{ 2, 6, 7 }, new int[]{ 1, 0, 0, 0 }));
+	}
 }

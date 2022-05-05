@@ -318,4 +318,39 @@ public class ArrayMain
 			System.out.println(val);
 		}
 	}*/
+
+	public static int[] diffOfTwoArray(int[] arr1, int[] arr2)
+	{
+		int a1 = arr1.length;
+		int a2 = arr2.length;
+
+		int[] arr = new int[a2];
+
+		int i = 0;
+
+		int carry = 0;
+
+		while( i < arr.length )
+		{
+			int a = a1 - 1 - i >= 0 ? arr1[a1 - 1 - i] : 0;
+			int b = a2 - 1 - i >= 0 ? arr2[a2 - 1 - i] : 0;
+
+			int diff;
+			if( b - carry >= a )
+			{
+				diff = b - a - carry;
+				carry = 0;
+			}
+			else
+			{
+				diff = b + 10 - a - carry;
+				carry = 1;
+			}
+			arr[arr.length - 1 - i] = diff;
+			i++;
+		}
+
+		return arr;
+	}
+
 }
