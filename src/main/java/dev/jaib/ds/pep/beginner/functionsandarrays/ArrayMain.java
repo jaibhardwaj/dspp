@@ -6,6 +6,7 @@ public class ArrayMain
 	public static void main(String[] args)
 	{
 		barChart(new int[]{3, 1 , 0, 7, 5});
+		printSubArraysOfAnArray(new int[]{1, 2, 3});
 	}
 	/**
 	 * Span Of Array
@@ -319,6 +320,41 @@ public class ArrayMain
 		}
 	}*/
 
+	/**
+	 * Difference Of Two Arrays
+	 *
+	 * Easy
+	 *
+	 * You are given a number n1, representing the size of array a1. 2. You are given n1 numbers, representing elements of array a1. 3. You are given a number n2, representing the size of array a2. 4. You are given n2 numbers, representing elements of array a2. 5. The two arrays represent digits of two numbers. 6. You are required to find the difference of two numbers represented by two arrays and print the arrays. a2 - a1 Assumption - number represented by a2 is greater.
+	 *
+	 * Constraints
+	 *
+	 * 1 <= n1, n2 <= 100 0 <= a1[i], a2[i] < 10 number reresented by a1 is smaller than number represented by a2
+	 *
+	 * Format
+	 *
+	 * Input
+	 *
+	 * A number n1 n1 number of elements line separated A number n2 n2 number of elements line separated
+	 *
+	 * Output
+	 *
+	 * A number representing difference of two numbers (a2 - a1), represented by two arrays.
+	 *
+	 * Example
+	 *
+	 * Sample Input
+	 *
+	 * 3 2 6 7 4 1 0 0 0
+	 *
+	 * Sample Output
+	 *
+	 * 7 3 3
+	 *
+	 * @param arr1 the first Array
+	 * @param arr2 the Second Array
+	 * @return the Difference between two array
+	 */
 	public static int[] diffOfTwoArray(int[] arr1, int[] arr2)
 	{
 		int a1 = arr1.length;
@@ -351,6 +387,238 @@ public class ArrayMain
 		}
 
 		return arr;
+	}
+
+	/**
+	 * Reverse An Array
+	 *
+	 * Easy
+	 *
+	 * You are given a number n, representing the size of array a. 2. You are given n numbers, representing elements of array a. 3. You are required to reverse the contents of array a.
+	 *
+	 * Constraints
+	 *
+	 * 0 <= n < 10^4 -10^9 <= a[i] <= 10^9
+	 *
+	 * Format
+	 *
+	 * Input
+	 *
+	 * Input is managed for you
+	 *
+	 * Output
+	 *
+	 * Output is managed for you
+	 *
+	 * Example
+	 *
+	 * Sample Input
+	 *
+	 * 5 1 2 3 4 5
+	 *
+	 * Sample Output
+	 *
+	 * 5 4 3 2 1
+	 *
+	 * @param arr the array
+	 * @return the reversed array
+	 */
+	public static int[] reverseOfArray(int[] arr)
+	{
+		int i = 0;
+		int j = arr.length - 1;
+		while( i < j)
+		{
+			int temp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = temp;
+			i++;
+			j--;
+		}
+
+		return arr;
+	}
+
+	/**
+	 * Rotate An Array
+	 * Easy
+	 *
+	 * 1. You are given a number n, representing the size of array a.
+	 * 2. You are given n numbers, representing elements of array a.
+	 * 3. You are given a number k.
+	 * 4. Rotate the array a, k times to the right (for positive values of k), and to
+	 * the left for negative values of k.
+	 *
+	 * Constraints
+	 * 0 <= n < 10^4
+	 * -10^9 <= a[i], k <= 10^9
+	 *
+	 * Format
+	 * Input
+	 * Input is managed for you
+	 *
+	 * Output
+	 * Output is managed for you
+	 *
+	 * Example
+	 * Sample Input
+	 *
+	 * 5
+	 * 1
+	 * 2
+	 * 3
+	 * 4
+	 * 5
+	 * 3
+	 *
+	 * Sample Output
+	 * 3 4 5 1 2
+	 *
+	 * @param a the array
+	 * @param k the rotation count
+	 * @return the rotated array
+	 */
+	public static int[] rotateAnArray(int[] a, int k)
+	{
+		k = k % a.length;
+		if (k < 0) {
+			k += a.length;
+		}
+
+		reverse(a, 0, a.length - k - 1);
+		reverse(a, a.length - k, a.length - 1);
+		reverse(a, 0, a.length - 1);
+
+		return a;
+
+	}
+
+	public static void reverse(int[] a, int li, int ri)
+	{
+		while(li < ri)
+		{
+			int temp = a[li];
+			a[li] = a[ri];
+			a[ri] = temp;
+
+			li++;
+			ri--;
+		}
+	}
+
+	/**
+	 * Inverse Of An Array
+	 * Easy
+	 *
+	 * 1. You are given a number n, representing the size of array a.
+	 * 2. You are given n numbers, representing elements of array a.
+	 * 3. You are required to calculate the inverse of array a.
+	 *
+	 * For definition and constraints check this link
+	 * https://www.pepcoding.com/resources/online-java-foundation/function-and-arrays/inverse-of-an-array-official/ojquestion
+	 * The only difference is the range of values is from 0 to n - 1, instead of 1 to n.
+	 *
+	 * Constraints
+	 * 0 <= n < 10^7
+	 * For more constraints check this
+	 * https://www.pepcoding.com/resources/online-java-foundation/function-and-arrays/inverse-of-an-array-official/ojquestion
+	 * The only difference is the range of values is from 0 to n - 1, instead
+	 * of 1 to n
+	 *
+	 * Format
+	 * Input
+	 * Input is managed for you
+	 *
+	 * Output
+	 * Output is managed for you
+	 *
+	 * Example
+	 * Sample Input
+	 *
+	 * 5
+	 * 4
+	 * 0
+	 * 2
+	 * 3
+	 * 1
+	 *
+	 * Sample Output
+	 * 1
+	 * 4
+	 * 2
+	 * 3
+	 * 0
+	 *
+	 * @param arr the array
+	 * @return the inverse array
+	 */
+	public static int[] inverseOfAnArray(int[] arr)
+	{
+		int[] inv = new int[arr.length];
+
+		for( int i = 0; i < arr.length; i++ )
+		{
+			int v = arr[i];
+			inv[v] = i;
+		}
+		return inv;
+	}
+
+	/**
+	 * Subarray Problem
+	 * Easy
+	 *
+	 * 1. You are given an array of size 'n' and n elements of the same array.
+	 * 2. You are required to find and print all the subarrays of the given array.
+	 * 3. Each subarray should be space seperated and on a seperate lines. Refer to sample input and output.
+	 *
+	 * Constraints
+	 * 1 <= n <= 10
+	 * 0 <= n1, n2
+	 *  .. n elements <= 10 ^9
+	 *
+	 * Format
+	 * Input
+	 * A number n
+	 * n1
+	 * n2
+	 * .. n number of elements
+	 *
+	 * Output
+	 * [Tab separated elements of subarray]
+	 * ..
+	 * All subarrays
+	 *
+	 * Example
+	 * Sample Input
+	 *
+	 * 3
+	 * 10
+	 * 20
+	 * 30
+	 *
+	 * Sample Output
+	 * 10
+	 * 10	20
+	 * 10	20	30
+	 * 20
+	 * 20	30
+	 * 30
+	 * @param arr the array
+	 */
+	public static void printSubArraysOfAnArray(int[] arr)
+	{
+		for( int i = 0; i < arr.length; i++ )
+		{
+			for( int j = i; j < arr.length; j++ )
+			{
+				for( int k = i; k <= j; k++ )
+				{
+					System.out.print(arr[k] + "\t");
+				}
+				System.out.println();
+			}
+		}
 	}
 
 }
