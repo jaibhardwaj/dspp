@@ -13,6 +13,9 @@ public class ArrayMain
 
 		System.out.println("########### printSubsetsOfArray ###########");
 		printSubsetsOfArray(new int[]{1, 2, 3});
+
+		System.out.println("########### printCeilAndFloorOfAnArray ###########");
+		printCeilAndFloorOfAnArray(new int[]{1, 2, 3, 4, 6, 8, 10, 12}, 5);
 	}
 	/**
 	 * Span Of Array
@@ -32,7 +35,7 @@ public class ArrayMain
 	 * A number n
 	 * n1
 	 * n2
-	 * .. n number of elements
+	 * n number of elements
 	 *
 	 * Output
 	 * A number representing max - min
@@ -95,7 +98,7 @@ public class ArrayMain
 	 * A number n
 	 * n1
 	 * n2
-	 * .. n number of elements
+	 * n number of elements
 	 * A number d
 	 *
 	 * Output
@@ -139,7 +142,7 @@ public class ArrayMain
 	 *
 	 * 1. You are given a number n, representing the size of array a.
 	 * 2. You are given n numbers, representing elements of array a.
-	 * 3. You are required to print a bar chart representing value of arr a.
+	 * 3. You are required to print a bar chart representing value of arr a
 	 *
 	 * Constraints
 	 * 1 <= n <= 30
@@ -150,10 +153,10 @@ public class ArrayMain
 	 * A number n
 	 * n1
 	 * n2
-	 * .. n number of elements
+	 * n number of elements
 	 *
 	 * Output
-	 * A bar chart of asteriks representing value of array a
+	 * A bar chart of asterisks representing value of array a
 	 *
 	 * Example
 	 * Sample Input
@@ -225,9 +228,9 @@ public class ArrayMain
 	 *
 	 * Format
 	 * Input
-	 * A number n1
+	 * A number n1.
 	 * n1 number of elements line separated
-	 * A number n2
+	 * A number n2.
 	 * n2 number of elements line separated
 	 *
 	 * Output
@@ -335,13 +338,13 @@ public class ArrayMain
 	 *
 	 * Constraints
 	 *
-	 * 1 <= n1, n2 <= 100 0 <= a1[i], a2[i] < 10 number reresented by a1 is smaller than number represented by a2
+	 * 1 <= n1, n2 <= 100 0 <= a1[i], a2[i] < 10 number represented by a1 is smaller than number represented by a2
 	 *
 	 * Format
 	 *
 	 * Input
 	 *
-	 * A number n1 n1 number of elements line separated A number n2 n2 number of elements line separated
+	 * A number n1, n1 number of elements line separated A number n2, n2 number of elements line separated
 	 *
 	 * Output
 	 *
@@ -400,7 +403,7 @@ public class ArrayMain
 	 *
 	 * Easy
 	 *
-	 * You are given a number n, representing the size of array a. 2. You are given n numbers, representing elements of array a. 3. You are required to reverse the contents of array a.
+	 * You are given a number n, representing the size of array a. 2. You are given n numbers, representing elements of array a. 3. You are required to reverse the contents of array a
 	 *
 	 * Constraints
 	 *
@@ -460,10 +463,8 @@ public class ArrayMain
 	 * -10^9 <= a[i], k <= 10^9
 	 *
 	 * Format
-	 * Input
 	 * Input is managed for you
 	 *
-	 * Output
 	 * Output is managed for you
 	 *
 	 * Example
@@ -518,24 +519,22 @@ public class ArrayMain
 	 *
 	 * 1. You are given a number n, representing the size of array a.
 	 * 2. You are given n numbers, representing elements of array a.
-	 * 3. You are required to calculate the inverse of array a.
+	 * 3. You are required to calculate the inverse of array a
 	 *
 	 * For definition and constraints check this link
-	 * https://www.pepcoding.com/resources/online-java-foundation/function-and-arrays/inverse-of-an-array-official/ojquestion
+	 * <a href="https://www.pepcoding.com/resources/online-java-foundation/function-and-arrays/inverse-of-an-array-official/ojquestion">...</a>
 	 * The only difference is the range of values is from 0 to n - 1, instead of 1 to n.
 	 *
 	 * Constraints
 	 * 0 <= n < 10^7
 	 * For more constraints check this
-	 * https://www.pepcoding.com/resources/online-java-foundation/function-and-arrays/inverse-of-an-array-official/ojquestion
+	 * <a href="https://www.pepcoding.com/resources/online-java-foundation/function-and-arrays/inverse-of-an-array-official/ojquestion">...</a>
 	 * The only difference is the range of values is from 0 to n - 1, instead
 	 * of 1 to n
 	 *
 	 * Format
-	 * Input
 	 * Input is managed for you
 	 *
-	 * Output
 	 * Output is managed for you
 	 *
 	 * Example
@@ -571,7 +570,7 @@ public class ArrayMain
 	}
 
 	/**
-	 * Subarray Problem
+	 * Sub-array Problem
 	 * Easy
 	 *
 	 * 1. You are given an array of size 'n' and n elements of the same array.
@@ -588,11 +587,11 @@ public class ArrayMain
 	 * A number n
 	 * n1
 	 * n2
-	 * .. n number of elements
+	 * n number of elements
 	 *
 	 * Output
 	 * [Tab separated elements of subarray]
-	 * ..
+	 *
 	 * All subarrays
 	 *
 	 * Example
@@ -645,11 +644,11 @@ public class ArrayMain
 	 * A number n
 	 * n1
 	 * n2
-	 * .. n number of elements
+	 * n number of elements
 	 *
 	 * Output
 	 * [Tab separated elements of subset]
-	 * ..
+	 *
 	 * All subsets
 	 *
 	 * Example
@@ -706,6 +705,114 @@ public class ArrayMain
 			}
 			System.out.println(set);
 			// printing the required pattern line-by-line
+		}
+	}
+
+	/**
+	 * Binary Search Algorithm
+	 *
+	 * @param arr the sorted array
+	 * @param val the search element
+	 * @return the index of searched element
+	 */
+	public static int binarySearch(int[] arr, int val)
+	{
+		int low = 0;
+		int high = arr.length - 1;
+
+		while(low <= high)
+		{
+			int mid = (low + high) / 2;
+
+			if( val == arr[mid] )
+			{
+				return mid;
+			}
+			else if( val < arr[mid] )
+			{
+				high = mid - 1;
+			}
+			else
+			{
+				low = mid + 1;
+			}
+		}
+
+		return -1;
+	}
+
+
+	/**
+	 *
+	 * Broken Economy
+	 *
+	 * Easy
+	 *
+	 * Find Ceil and Floor of an array
+	 *
+	 * Constraints
+	 *
+	 * 1 <= n <= 1000 -10^9 <= n1, n2, .. n elements <= 10^9 -10^9 <= d <= 10^9
+	 *
+	 * Format
+	 *
+	 * Input
+	 *
+	 * A number n n1 n2 .. n number of elements A number d
+	 *
+	 * Output
+	 *
+	 * A number representing ceil A number representing floor
+	 *
+	 * Example
+	 *
+	 * Sample Input
+	 *
+	 * 10 1 5 10 15 22 33 40 42 55 66 34
+	 *
+	 * Sample Output
+	 *
+	 * 40 33
+	 *
+	 * @param arr the given array
+	 * @param d the value
+	 */
+	public static void printCeilAndFloorOfAnArray(int[] arr, int d)
+	{
+		int low = 0;
+		int high = arr.length - 1;
+		int ceil = -1;
+		int floor = -1;
+		int mid = -1;
+
+		while(low <= high)
+		{
+			mid = (low + high) / 2;
+
+			if( d == arr[mid] )
+			{
+				break;
+			}
+			else if( d < arr[mid] )
+			{
+				high = mid - 1;
+				floor = arr[mid];
+			}
+			else
+			{
+				low = mid + 1;
+				ceil = arr[mid];
+			}
+		}
+
+		if( d == arr[mid] )
+		{
+			System.out.println(arr[mid]);
+		}
+		else
+		{
+			System.out.println(floor);
+			System.out.println(ceil);
 		}
 	}
 

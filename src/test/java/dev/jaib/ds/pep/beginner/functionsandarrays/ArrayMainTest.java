@@ -53,4 +53,13 @@ public class ArrayMainTest
 	{
 		assertArrayEquals(new int[]{ 4, 2, 3, 0, 1 }, ArrayMain.inverseOfAnArray(new int[]{ 3, 4, 1, 2, 0 }));
 	}
+
+	@Test
+	public void binarySearchAlgorithmTest()
+	{
+		assertEquals(8, ArrayMain.binarySearch(new int[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 9));
+		assertEquals(0, ArrayMain.binarySearch(new int[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 1));
+		assertEquals(-1, ArrayMain.binarySearch(new int[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 11));
+		assertEquals(6, ArrayMain.binarySearch(new int[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 7));
+	}
 }
