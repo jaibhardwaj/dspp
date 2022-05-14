@@ -16,6 +16,9 @@ public class ArrayMain
 
 		System.out.println("########### printCeilAndFloorOfAnArray ###########");
 		printCeilAndFloorOfAnArray(new int[]{1, 2, 3, 4, 6, 8, 10, 12}, 5);
+
+		System.out.println("########### printLowAndHighIndexOfAValueInAnArray ###########");
+		printLowAndHighIndexOfAValueInAnArray(new int[]{1, 2, 3, 4, 5, 5, 5, 6, 8, 10, 12}, 5);
 	}
 	/**
 	 * Span Of Array
@@ -814,6 +817,111 @@ public class ArrayMain
 			System.out.println(floor);
 			System.out.println(ceil);
 		}
+	}
+
+
+	/**
+	 * First Index And Last Index
+	 * Easy
+	 *
+	 * 1. You are given a number n, representing the size of array a.
+	 * 2. You are given n numbers, representing elements of array a.
+	 *
+	 * Asssumption - Array is sorted. Array may have duplicate values.
+	 *
+	 * Constraints
+	 * 1 <= n <= 1000
+	 * 1 <= n1, n2, .. n elements <= 100
+	 * 1 <= d <= 100
+	 *
+	 * Format
+	 * Input
+	 * A number n
+	 * n1
+	 * n2
+	 * .. n number of elements
+	 * A number d
+	 *
+	 * Output
+	 * A number representing first index
+	 * A number representing last index
+	 *
+	 * Example
+	 * Sample Input
+	 *
+	 * 15
+	 * 1
+	 * 5
+	 * 10
+	 * 15
+	 * 22
+	 * 33
+	 * 33
+	 * 33
+	 * 33
+	 * 33
+	 * 40
+	 * 42
+	 * 55
+	 * 66
+	 * 77
+	 * 33
+	 *
+	 * Sample Output
+	 * 5
+	 * 9
+	 *
+	 * @param arr the array
+	 * @param data the data
+	 */
+	public static void printLowAndHighIndexOfAValueInAnArray(int[] arr, int data)
+	{
+		int low = 0;
+		int high = arr.length - 1;
+		int firstIndex = -1;
+		int lastIndex = -1;
+
+		while(low <= high)
+		{
+			int mid = (low + high) / 2;
+			if( data == arr[mid] )
+			{
+				firstIndex = mid;
+				high = mid - 1;
+			}
+			else if( data < arr[mid] )
+			{
+				high = mid - 1;
+			}
+			else
+			{
+				low = mid + 1;
+			}
+		}
+
+
+		low = 0;
+		high = arr.length - 1;
+		while(low <= high)
+		{
+			int mid = (low + high) / 2;
+			if( data == arr[mid] )
+			{
+				lastIndex = mid;
+				low = mid + 1;
+			}
+			else if( data < arr[mid] )
+			{
+				high = mid - 1;
+			}
+			else
+			{
+				low = mid + 1;
+			}
+		}
+
+		System.out.println("firstIndex: " + firstIndex);
+		System.out.println("lastIndex: " + lastIndex);
 	}
 
 }
