@@ -21,4 +21,13 @@ public class RecursionMainTest
 		assertEquals(4, RecursionMain.firstIndex(arr, 0, 11));
 		assertEquals(-1, RecursionMain.firstIndex(arr, 0, 1));
 	}
+
+	@Test
+	public void lastIndex()
+	{
+		int[] arr = {15, 30, 40, 4, 11, 9, 4, 11};
+		assertEquals(6, RecursionMain.lastIndex(arr, 0, 4));
+		assertEquals(7, RecursionMain.lastIndex(arr, 0, 11));
+		assertEquals(-1, RecursionMain.lastIndex(arr, 0, 1));
+	}
 }
