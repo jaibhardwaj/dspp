@@ -55,5 +55,17 @@ public class RecursionMainTest
 		assertArrayEquals(arr, RecursionMain.getKPC("78").toArray());
 	}
 
+	@Test
+	public void ggetStairPathsTest()
+	{
+		int stairs3 = 3;
+		String[] arr3 = {"111", "12", "21", "3"};
+		assertArrayEquals(arr3, RecursionMain.getStairPaths(stairs3).toArray());
+
+		int stairs4 = 4;
+		String[] arr4 = {"1111", "112", "121", "13", "211", "22", "31"};
+		assertArrayEquals(arr4, RecursionMain.getStairPaths(stairs4).toArray());
+	}
+
 
 }
