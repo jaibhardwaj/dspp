@@ -47,4 +47,13 @@ public class RecursionMainTest
 		String[] arr = {"", "c", "b", "bc", "a", "ac", "ab", "abc"};
 		assertArrayEquals(arr, RecursionMain.getSubsequence("abc").toArray());
 	}
+
+	@Test
+	public void getKPCTest()
+	{
+		String[] arr = {"vt", "wt", "xt", "vu", "wu", "xu"};
+		assertArrayEquals(arr, RecursionMain.getKPC("78").toArray());
+	}
+
+
 }
