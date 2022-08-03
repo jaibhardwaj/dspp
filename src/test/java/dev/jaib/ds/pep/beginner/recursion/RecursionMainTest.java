@@ -8,14 +8,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class RecursionMainTest
 {
 	@Test
-	public void maxOfArray()
+	public void maxOfArrayTest()
 	{
 		int[] arr = {15, 30, 40, 4, 11, 9};
 		assertEquals(40, RecursionMain.maxOfArray(arr, 0));
 	}
 
 	@Test
-	public void firstIndex()
+	public void firstIndexTest()
 	{
 		int[] arr = {15, 30, 40, 4, 11, 9, 4, 11};
 		assertEquals(3, RecursionMain.firstIndex(arr, 0, 4));
@@ -24,7 +24,7 @@ public class RecursionMainTest
 	}
 
 	@Test
-	public void lastIndex()
+	public void lastIndexTest()
 	{
 		int[] arr = {15, 30, 40, 4, 11, 9, 4, 11};
 		assertEquals(6, RecursionMain.lastIndex(arr, 0, 4));
@@ -33,11 +33,18 @@ public class RecursionMainTest
 	}
 
 	@Test
-	public void allIndices()
+	public void allIndicesTest()
 	{
 		int[] arr = {15, 30, 40, 4, 11, 9, 4, 11};
 		assertArrayEquals(new int[]{3, 6}, RecursionMain.allIndices(arr, 4, 0, 0));
 		assertArrayEquals(new int[]{4, 7}, RecursionMain.allIndices(arr, 11, 0, 0));
 		assertArrayEquals(new int[]{}, RecursionMain.allIndices(arr, 1, 0, 0));
+	}
+
+	@Test
+	public void getSubsequenceTest()
+	{
+		String[] arr = {"", "c", "b", "bc", "a", "ac", "ab", "abc"};
+		assertArrayEquals(arr, RecursionMain.getSubsequence("abc").toArray());
 	}
 }
