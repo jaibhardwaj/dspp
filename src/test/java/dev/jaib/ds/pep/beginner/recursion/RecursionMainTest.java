@@ -56,7 +56,7 @@ public class RecursionMainTest
 	}
 
 	@Test
-	public void ggetStairPathsTest()
+	public void getStairPathsTest()
 	{
 		int stairs3 = 3;
 		String[] arr3 = {"111", "12", "21", "3"};
@@ -65,6 +65,13 @@ public class RecursionMainTest
 		int stairs4 = 4;
 		String[] arr4 = {"1111", "112", "121", "13", "211", "22", "31"};
 		assertArrayEquals(arr4, RecursionMain.getStairPaths(stairs4).toArray());
+	}
+
+	@Test
+	public void getMazePathsTest()
+	{
+		String[] arr3 = {"hhvv", "hvhv", "hvvh", "vhhv", "vhvh", "vvhh"};
+		assertArrayEquals(arr3, RecursionMain.getMazePaths(1, 1, 3, 3).toArray());
 	}
 
 
