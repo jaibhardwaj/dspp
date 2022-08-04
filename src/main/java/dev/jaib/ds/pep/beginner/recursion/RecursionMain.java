@@ -28,34 +28,38 @@ public class RecursionMain
 		System.out.println("###### Print Subsequence ######");
 		printSubsequence("abc", "");
 
+		System.out.println("###### Print KPC ######");
+		printKPC("78", "");
+
 	}
 
 	/**
 	 *
 	 * Tower Of Hanoi
+	 * <p>
 	 * Easy
-	 *
+	 * <p>
 	 * Tower Of Hanoi
-	 * 1. There are 3 towers. Tower 1 has n disks, where n is a positive number. Tower 2 and 3 are empty. 2. The disks are increasingly placed in terms of size such that the smallest disk is on top and largest disk is at bottom. 3. You are required to 3.1. Print the instructions to move the disks. 3.2. from tower 1 to tower 2 using tower 3 3.3. following the rules 3.3.1 move 1 disk at a time. 3.3.2 never place a smaller disk under a larger disk. 3.3.3 you can only move a disk at the top. Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is.Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+	 * 1. There are 3 towers. Tower 1 has n disks, where n is a positive number. Tower 2 and 3 are empty. 2. The disks are increasingly placed in terms of size such that the smallest disk is on top and largest disk is at bottom. 3. You are required to 3.1. Print the instructions to move the disks. 3.2. from tower 1 to tower 2 using tower 3 3.3. following the rules 3.3.1 move 1 disk at a time. 3.3.2 never place a smaller disk under a larger disk. 3.3.3 you can only move a disk at the top.
 	 * Constraints
 	 * 0 <= n <= 9 10 <= n1, n2, n3 <= 10^9 n1 != n2 != n3
 	 * Format
 	 * Input
 	 * A number n, representing number of disks A number n1, representing id of tower 1 A number n2, representing id of tower 2 A number n3, representing id of tower 3
-	 *
+	 * <p>
 	 *
 	 * Output
 	 * n[n1 -> n2] .. A set of instructions in above format to represent, move nth disc from n1 tower to n2 tower
-	 *
+	 * <p>
 	 *
 	 * Example
 	 * Sample Input
-	 *
+	 * <p>
 	 * 3
 	 * 10
 	 * 11
 	 * 12
-	 *
+	 * <p>
 	 * Sample Output
 	 * 1[10 -> 11]
 	 * 2[10 -> 12]
@@ -85,41 +89,40 @@ public class RecursionMain
 	/**
 	 *
 	 * Display Array
+	 * <p>
 	 * Easy
-	 *
+	 * <p>
 	 * 1. You are given a number n, representing the size of array a.
 	 * 2. You are given n numbers, representing elements of array a.
 	 * 3. You are required to print the elements of array from beginning to end each in a separate line.
 	 * 4. For the above purpose complete the body of displayArr function. Don't change the signature.
-	 *
-	 * Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
-	 *
+	 * <p>
 	 * Constraints
 	 * 1 <= n <= 30
 	 * 0 <= n1, n2, .. n elements <= 10
-	 *
+	 * <p>
 	 * Format
 	 * Input
 	 * A number n
 	 * n1
 	 * n2
 	 * .. n number of elements
-	 *
+	 * <p>
 	 * Output
 	 * n1
 	 * n2
 	 * .. n elements
-	 *
+	 * <p>
 	 * Example
 	 * Sample Input
-	 *
+	 * <p>
 	 * 5
 	 * 3
 	 * 1
 	 * 0
 	 * 7
 	 * 5
-	 *
+	 * <p>
 	 * Sample Output
 	 * 3
 	 * 1
@@ -145,41 +148,43 @@ public class RecursionMain
 	/**
 	 *
 	 * Display Array In Reverse
+	 * <p>
 	 * Easy
-	 *
+	 * <p>
 	 * 1. You are given a number n, representing the size of array a.
 	 * 2. You are given n numbers, representing elements of array a.
 	 * 3. You are required to print the elements of array from end to beginning each in a separate line.
 	 * 4. For the above purpose complete the body of displayArrReverse function. Don't change the signature.
-	 *
-	 * Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
-	 *
+	 * <p>
+	 * <p>
 	 * Constraints
 	 * 1 <= n <= 30
 	 * 0 <= n1, n2, .. n elements <= 10
-	 *
+	 * <p>
 	 * Format
+	 * <p>
 	 * Input
 	 * A number n
 	 * n1
 	 * n2
 	 * .. n number of elements
-	 *
+	 * <p>
 	 * Output
 	 * n1
 	 * n2
 	 * .. n elements
-	 *
+	 * <p>
 	 * Example
+	 * <p>
 	 * Sample Input
-	 *
+	 * <p>
 	 * 5
 	 * 3
 	 * 1
 	 * 0
 	 * 7
 	 * 5
-	 *
+	 * <p>
 	 * Sample Output
 	 * 5
 	 * 7
@@ -217,32 +222,32 @@ public class RecursionMain
 	/**
 	 *
 	 * Max Of An Array
+	 * <p>
 	 * Easy
-	 *
+	 * <p>
 	 * 1. You are given a number n, representing the count of elements.
 	 * 2. You are given n numbers.
 	 * 3. You are required to find the maximum of input.
 	 * 4. For the purpose complete the body of maxOfArray function. Don't change the signature.
-	 *
-	 * Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
-	 *
+	 * <p>
+	 * <p>
 	 * Constraints
 	 * 1 <= n <= 10^4
 	 * 0 <= n1, n2, .. n elements <= 10 ^9
-	 *
+	 * <p>
 	 * Format
 	 * Input
 	 * A number n
 	 * n1
 	 * n2
 	 * .. n number of elements
-	 *
+	 * <p>
 	 * Output
 	 * A number representing max
-	 *
+	 * <p>
 	 * Example
 	 * Sample Input
-	 *
+	 * <p>
 	 * 6
 	 * 15
 	 * 30
@@ -250,7 +255,7 @@ public class RecursionMain
 	 * 4
 	 * 11
 	 * 9
-	 *
+	 * <p>
 	 * Sample Output
 	 * 40
 	 *
@@ -280,21 +285,21 @@ public class RecursionMain
 	/**
 	 *
 	 * First Index
+	 * <p>
 	 * Easy
-	 *
+	 * <p>
 	 * 1. You are given a number n, representing the count of elements.
 	 * 2. You are given n numbers.
 	 * 3. You are given a number x.
 	 * 4. You are required to find the first index at which x occurs in array a.
 	 * 5. If x exists in array, print the first index where it is found otherwise print -1.
-	 *
-	 * Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
-	 *
+	 * <p>
+	 * <p>
 	 * Constraints
 	 * 1 <= n <= 10^4
 	 * 0 <= n1, n2, .. n elements <= 10 ^ 3
 	 * 0 <= x <= 10 ^ 3
-	 *
+	 * <p>
 	 * Format
 	 * Input
 	 * A number n
@@ -302,13 +307,13 @@ public class RecursionMain
 	 * n2
 	 * .. n number of elements
 	 * A number x
-	 *
+	 * <p>
 	 * Output
 	 * A number representing first index of occurence of x in array a or -1 if not found at all.
-	 *
+	 * <p>
 	 * Example
 	 * Sample Input
-	 *
+	 * <p>
 	 * 6
 	 * 15
 	 * 11
@@ -317,7 +322,7 @@ public class RecursionMain
 	 * 4
 	 * 9
 	 * 4
-	 *
+	 * <p>
 	 * Sample Output
 	 * 3
 	 *
@@ -344,22 +349,22 @@ public class RecursionMain
 
 	/**
 	 *
-	 *Last Index
+	 * Last Index
+	 * <p>
 	 * Easy
-	 *
+	 * <p>
 	 * 1. You are given a number n, representing the count of elements.
 	 * 2. You are given n numbers.
 	 * 3. You are given a number x.
 	 * 4. You are required to find the last index at which x occurs in array a.
 	 * 5. If x exists in array, print the last index where it is found otherwise print -1.
-	 *
-	 * Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
-	 *
+	 * <p>
+	 * <p>
 	 * Constraints
 	 * 1 <= n <= 10^4
 	 * 0 <= n1, n2, .. n elements <= 10 ^ 3
 	 * 0 <= x <= 10 ^ 3
-	 *
+	 * <p>
 	 * Format
 	 * Input
 	 * A number n
@@ -367,13 +372,13 @@ public class RecursionMain
 	 * n2
 	 * .. n number of elements
 	 * A number x
-	 *
+	 * <p>
 	 * Output
 	 * A number representing last index of occurence of x in array a or -1 if not found at all.
-	 *
+	 * <p>
 	 * Example
 	 * Sample Input
-	 *
+	 * <p>
 	 * 6
 	 * 15
 	 * 11
@@ -382,7 +387,7 @@ public class RecursionMain
 	 * 4
 	 * 9
 	 * 4
-	 *
+	 * <p>
 	 * Sample Output
 	 * 4
 	 * @param arr the array
@@ -419,41 +424,39 @@ public class RecursionMain
 	/**
 	 *
 	 * All Indices Of Array
+	 * <p>
 	 * Easy
-	 *
+	 * <p>
 	 * 1. You are given a number n, representing the count of elements.
-	 *
+	 * <p>
 	 * 2. You are given n numbers.
-	 *
+	 * <p>
 	 * 3. You are given a number x.
-	 *
+	 * <p>
 	 * 4. You are required to return the all indices at which x occurs in array a.
-	 *
+	 * <p>
 	 * 5. Return an array of appropriate size which contains all indices at which x occurs in array
-	 *
+	 * <p>
 	 * 6. If no such element exist print "NO OUTPUT" a.
 	 *
-	 *
-	 *
-	 * Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
-	 *
+	 * <p>
 	 *
 	 * Constraints
 	 * 1 <= n <= 10^4 0 <= n1, n2, .. n elements <= 10 ^ 3 0 <= x <= 10 ^ 3
-	 *
+	 * <p>
 	 *
 	 * Format
 	 * Input
 	 * A number n n1 n2 .. n number of elements A number x
-	 *
+	 * <p>
 	 *
 	 * Output
 	 * Return the array of indices from the allIndices function. Display is managed for you.
-	 *
+	 * <p>
 	 *
 	 * Example
 	 * Sample Input
-	 *
+	 * <p>
 	 * 6
 	 * 15
 	 * 11
@@ -462,7 +465,7 @@ public class RecursionMain
 	 * 4
 	 * 9
 	 * 4
-	 *
+	 * <p>
 	 * Sample Output
 	 * 3
 	 * 4
@@ -498,29 +501,30 @@ public class RecursionMain
 	/**
 	 *
 	 * Get Subsequence
+	 * <p>
 	 * Easy
-	 *
-	 * 1. You are given a string str. 2. Complete the body of getSS function - without changing signature - to calculate all subsequences of str. Use sample input and output to take idea about subsequences. Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
-	 *
+	 * <p>
+	 * 1. You are given a string str. 2. Complete the body of getSS function - without changing signature - to calculate all subsequences of str. Use sample input and output to take idea about subsequences.
+	 * <p>
 	 *
 	 * Constraints
 	 * 0 <= str.length <= 20
-	 *
+	 * <p>
 	 *
 	 * Format
 	 * Input
 	 * A string str
-	 *
+	 * <p>
 	 *
 	 * Output
 	 * Contents of the arraylist containing subsequences as shown in sample output
-	 *
+	 * <p>
 	 *
 	 * Example
 	 * Sample Input
-	 *
+	 * <p>
 	 * abc
-	 *
+	 * <p>
 	 * Sample Output
 	 * [, c, b, bc, a, ac, ab, abc]
 	 *
@@ -559,8 +563,9 @@ public class RecursionMain
 	/**
 	 *
 	 * Get Kpc
+	 * <p>
 	 * Easy
-	 *
+	 * <p>
 	 * 1. You are given a string str. The string str will contains numbers only, where each number stands for a key pressed on a mobile phone.
 	 * 2. The following list is the key to characters map :
 	 *     0 -> .;
@@ -575,25 +580,24 @@ public class RecursionMain
 	 *     9 -> yz
 	 * 3. Complete the body of getKPC function - without changing signature - to get the list of all words that could be produced by the keys in str.
 	 * Use sample input and output to take idea about output.
-	 *
-	 * Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
-	 *
+	 * <p>
+	 * <p>
 	 * Constraints
 	 * 0 <= str.length <= 10
 	 * str contains numbers only
-	 *
+	 * <p>
 	 * Format
 	 * Input
 	 * A string str
-	 *
+	 * <p>
 	 * Output
 	 * Contents of the arraylist containing words as shown in sample output
-	 *
+	 * <p>
 	 * Example
 	 * Sample Input
-	 *
+	 * <p>
 	 * 78
-	 *
+	 * <p>
 	 * Sample Output
 	 * [tv, tw, tx, uv, uw, ux]
 	 *
@@ -633,33 +637,33 @@ public class RecursionMain
 	/**
 	 *
 	 * Get Stair Paths
+	 * <p>
 	 * Easy
-	 *
+	 * <p>
 	 * 1. You are given a number n representing number of stairs in a staircase.
 	 * 2. You are standing at the bottom of staircase. You are allowed to climb 1 step, 2 steps or 3 steps in one move.
 	 * 3. Complete the body of getStairPaths function - without changing signature - to get the list of all paths that can be used to climb the staircase up.
 	 * Use sample input and output to take idea about output.
-	 *
-	 * Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
-	 *
+	 * <p>
+	 * <p>
 	 * Constraints
 	 * 0 <= n <= 10
-	 *
+	 * <p>
 	 * Format
 	 * Input
 	 * A number n
-	 *
+	 * <p>
 	 * Output
 	 * Contents of the arraylist containing paths as shown in sample output
-	 *
+	 * <p>
 	 * Example
 	 * Sample Input
-	 *
+	 * <p>
 	 * 3
-	 *
+	 * <p>
 	 * Sample Output
 	 * [111, 12, 21, 3]
-	 *
+	 * <p>
 	 *
 	 * @param n the stairs
 	 * @return the list containing all way to stairs from source to destination
@@ -674,8 +678,7 @@ public class RecursionMain
 		}
 		else if( n < 0 )
 		{
-			ArrayList<String> bres = new ArrayList<>();
-			return bres;
+			return new ArrayList<>();
 		}
 
 		ArrayList<String> path1 = getStairPaths(n - 1);
@@ -703,33 +706,33 @@ public class RecursionMain
 	/**
 	 *
 	 * Get Maze Paths
+	 * <p>
 	 * Easy
-	 *
+	 * <p>
 	 * 1. You are given a number n and a number m representing number of rows and columns in a maze.
 	 * 2. You are standing in the top-left corner and have to reach the bottom-right corner. Only two moves are allowed 'h' (1-step horizontal) and 'v' (1-step vertical).
 	 * 3. Complete the body of getMazePath function - without changing signature - to get the list of all paths that can be used to move from top-left to bottom-right.
 	 * Use sample input and output to take idea about output.
-	 *
-	 * Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+	 * <p>
 	 *
 	 * Constraints
 	 * 0 <= n <= 10
 	 * 0 <= m <= 10
-	 *
+	 * <p>
 	 * Format
 	 * Input
 	 * A number n
 	 * A number m
-	 *
+	 * <p>
 	 * Output
 	 * Contents of the arraylist containing paths as shown in sample output
-	 *
+	 * <p>
 	 * Example
 	 * Sample Input
-	 *
+	 * <p>
 	 * 3
 	 * 3
-	 *
+	 * <p>
 	 * Sample Output
 	 * [hhvv, hvhv, hvvh, vhhv, vhvh, vvhh]
 	 *
@@ -777,34 +780,34 @@ public class RecursionMain
 
 	/**
 	 * Get Maze Path With Jumps
+	 * <p>
 	 * Easy
-	 *
+	 * <p>
 	 * 1. You are given a number n and a number m representing number of rows and columns in a maze.
 	 * 2. You are standing in the top-left corner and have to reach the bottom-right corner.
 	 * 3. In a single move you are allowed to jump 1 or more steps horizontally (as h1, h2, .. ), or 1 or more steps vertically (as v1, v2, ..) or 1 or more steps diagonally (as d1, d2, ..).
 	 * 4. Complete the body of getMazePath function - without changing signature - to get the list of all paths that can be used to move from top-left to bottom-right.
 	 * Use sample input and output to take idea about output.
-	 *
-	 * Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+	 * <p>
 	 *
 	 * Constraints
 	 * 0 <= n <= 10
 	 * 0 <= m <= 10
-	 *
+	 * <p>
 	 * Format
 	 * Input
 	 * A number n
 	 * A number m
-	 *
+	 * <p>
 	 * Output
 	 * Contents of the arraylist containing paths as shown in sample output
-	 *
+	 * <p>
 	 * Example
 	 * Sample Input
-	 *
+	 * <p>
 	 * 2
 	 * 2
-	 *
+	 * <p>
 	 * Sample Output
 	 * [h1v1, v1h1, d1]
 	 *
@@ -862,30 +865,30 @@ public class RecursionMain
 	}
 
 	/**
-	 *Print Subsequence
+	 * Print Subsequence
+	 * <p>
 	 * Easy
-	 *
+	 * <p>
 	 * 1. You are given a string str.
 	 * 2. Complete the body of printSS function - without changing signature - to calculate and print all subsequences of str.
 	 * Use sample input and output to take idea about subsequences.
-	 *
-	 * Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+	 * <p>
 	 *
 	 * Constraints
 	 * 0 <= str.length <= 7
-	 *
+	 * <p>
 	 * Format
 	 * Input
 	 * A string str
-	 *
+	 * <p>
 	 * Output
 	 * Subsequences of str in order hinted by Sample output
-	 *
+	 * <p>
 	 * Example
 	 * Sample Input
-	 *
+	 * <p>
 	 * yvTA
-	 *
+	 * <p>
 	 * Sample Output
 	 * yvTA
 	 * yvT
@@ -920,6 +923,60 @@ public class RecursionMain
 		printSubsequence(roq, ans + ch);
 		printSubsequence(roq, ans + "");
 
+	}
+
+	/**
+	 * Print Kpc
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given a string str. The string str will contains numbers only, where each number stands for a key pressed on a mobile phone. 2. The following list is the key to characters map 0 -> .; 1 -> abc 2 -> def 3 -> ghi 4 -> jkl 5 -> mno 6 -> pqrs 7 -> tu 8 -> vwx 9 -> yz 3. Complete the body of printKPC function - without changing signature - to print the list of all words that could be produced by the keys in str. Use sample input and output to take idea about output.
+	 * <p>
+	 *
+	 * Constraints
+	 * 0 <= str.length <= 10 str contains numbers only
+	 * <p>
+	 *
+	 * Format
+	 * Input
+	 * A string str
+	 * <p>
+	 *
+	 * Output
+	 * Words that can be produced by pressed keys indictated by str in order hinted by Sample output
+	 * <p>
+	 *
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * 78
+	 * <p>
+	 * Sample Output
+	 * tv
+	 * tw
+	 * tx
+	 * uv
+	 * uw
+	 * ux
+	 *
+	 * @param str the keypad number string
+	 * @param asf the answer string
+	 */
+	public static void printKPC(String str, String asf)
+	{
+		if( str.length() == 0 )
+		{
+			System.out.println(asf);
+			return;
+		}
+
+		char ch = str.charAt(0);
+		String ros = str.substring(1);
+
+		for( char val : codes[ch - '0'].toCharArray() )
+		{
+			printKPC(ros, asf + val);
+		}
 	}
 
 }
