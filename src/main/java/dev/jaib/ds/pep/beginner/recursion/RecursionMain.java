@@ -34,6 +34,9 @@ public class RecursionMain
 		System.out.println("###### Print Stair Paths ######");
 		printStairPaths(4, "");
 
+		System.out.println("###### Print Maze Paths ######");
+		printStairPaths(4, "");
+
 	}
 
 	/**
@@ -55,15 +58,17 @@ public class RecursionMain
 	 * n[n1 -> n2] .. A set of instructions in above format to represent, move nth disc from n1 tower to n2 tower
 	 * <p>
 	 *
-	 * Example
-	 * Sample Input
+	 * Example :
+	 * <p>
+	 * Sample Input :
 	 * <p>
 	 * 3
 	 * 10
 	 * 11
 	 * 12
 	 * <p>
-	 * Sample Output
+	 * Sample Output :
+	 * <p>
 	 * 1[10 -> 11]
 	 * 2[10 -> 12]
 	 * 1[11 -> 12]
@@ -116,8 +121,9 @@ public class RecursionMain
 	 * n2
 	 * .. n elements
 	 * <p>
-	 * Example
-	 * Sample Input
+	 * Example :
+	 * <p>
+	 * Sample Input :
 	 * <p>
 	 * 5
 	 * 3
@@ -126,7 +132,8 @@ public class RecursionMain
 	 * 7
 	 * 5
 	 * <p>
-	 * Sample Output
+	 * Sample Output :
+	 * <p>
 	 * 3
 	 * 1
 	 * 0
@@ -177,9 +184,9 @@ public class RecursionMain
 	 * n2
 	 * .. n elements
 	 * <p>
-	 * Example
+	 * Example :
 	 * <p>
-	 * Sample Input
+	 * Sample Input :
 	 * <p>
 	 * 5
 	 * 3
@@ -188,7 +195,8 @@ public class RecursionMain
 	 * 7
 	 * 5
 	 * <p>
-	 * Sample Output
+	 * Sample Output :
+	 * <p>
 	 * 5
 	 * 7
 	 * 0
@@ -248,8 +256,9 @@ public class RecursionMain
 	 * Output
 	 * A number representing max
 	 * <p>
-	 * Example
-	 * Sample Input
+	 * Example :
+	 * <p>
+	 * Sample Input :
 	 * <p>
 	 * 6
 	 * 15
@@ -259,7 +268,8 @@ public class RecursionMain
 	 * 11
 	 * 9
 	 * <p>
-	 * Sample Output
+	 * Sample Output :
+	 * <p>
 	 * 40
 	 *
 	 * @param arr the given array
@@ -314,8 +324,9 @@ public class RecursionMain
 	 * Output
 	 * A number representing first index of occurence of x in array a or -1 if not found at all.
 	 * <p>
-	 * Example
-	 * Sample Input
+	 * Example :
+	 * <p>
+	 * Sample Input :
 	 * <p>
 	 * 6
 	 * 15
@@ -326,7 +337,8 @@ public class RecursionMain
 	 * 9
 	 * 4
 	 * <p>
-	 * Sample Output
+	 * Sample Output :
+	 * <p>
 	 * 3
 	 *
 	 * @param arr the given array
@@ -379,8 +391,9 @@ public class RecursionMain
 	 * Output
 	 * A number representing last index of occurence of x in array a or -1 if not found at all.
 	 * <p>
-	 * Example
-	 * Sample Input
+	 * Example :
+	 * <p>
+	 * Sample Input :
 	 * <p>
 	 * 6
 	 * 15
@@ -391,7 +404,8 @@ public class RecursionMain
 	 * 9
 	 * 4
 	 * <p>
-	 * Sample Output
+	 * Sample Output :
+	 * <p>
 	 * 4
 	 * @param arr the array
 	 * @param idx the index
@@ -457,8 +471,9 @@ public class RecursionMain
 	 * Return the array of indices from the allIndices function. Display is managed for you.
 	 * <p>
 	 *
-	 * Example
-	 * Sample Input
+	 * Example :
+	 * <p>
+	 * Sample Input :
 	 * <p>
 	 * 6
 	 * 15
@@ -469,7 +484,8 @@ public class RecursionMain
 	 * 9
 	 * 4
 	 * <p>
-	 * Sample Output
+	 * Sample Output :
+	 * <p>
 	 * 3
 	 * 4
 	 *
@@ -523,12 +539,14 @@ public class RecursionMain
 	 * Contents of the arraylist containing subsequences as shown in sample output
 	 * <p>
 	 *
-	 * Example
-	 * Sample Input
+	 * Example:
+	 * <p>
+	 * Sample Input:
 	 * <p>
 	 * abc
 	 * <p>
-	 * Sample Output
+	 * Sample Output:
+	 * <p>
 	 * [, c, b, bc, a, ac, ab, abc]
 	 *
 	 * @param str teh given string
@@ -596,12 +614,14 @@ public class RecursionMain
 	 * Output
 	 * Contents of the arraylist containing words as shown in sample output
 	 * <p>
-	 * Example
-	 * Sample Input
+	 * Example:
+	 * <p>
+	 * Sample Input:
 	 * <p>
 	 * 78
 	 * <p>
-	 * Sample Output
+	 * Sample Output:
+	 * <p>
 	 * [tv, tw, tx, uv, uw, ux]
 	 *
 	 * @param str the given string
@@ -659,12 +679,14 @@ public class RecursionMain
 	 * Output
 	 * Contents of the arraylist containing paths as shown in sample output
 	 * <p>
-	 * Example
-	 * Sample Input
+	 * Example :
+	 * <p>
+	 * Sample Input :
 	 * <p>
 	 * 3
 	 * <p>
-	 * Sample Output
+	 * Sample Output :
+	 * <p>
 	 * [111, 12, 21, 3]
 	 * <p>
 	 *
@@ -730,13 +752,15 @@ public class RecursionMain
 	 * Output
 	 * Contents of the arraylist containing paths as shown in sample output
 	 * <p>
-	 * Example
-	 * Sample Input
+	 * Example :
+	 * <p>
+	 * Sample Input :
 	 * <p>
 	 * 3
 	 * 3
 	 * <p>
-	 * Sample Output
+	 * Sample Output :
+	 * <p>
 	 * [hhvv, hvhv, hvvh, vhhv, vhvh, vvhh]
 	 *
 	 * @param sr the starting row
@@ -805,13 +829,15 @@ public class RecursionMain
 	 * Output
 	 * Contents of the arraylist containing paths as shown in sample output
 	 * <p>
-	 * Example
-	 * Sample Input
+	 * Example :
+	 * <p>
+	 * Sample Input :
 	 * <p>
 	 * 2
 	 * 2
 	 * <p>
-	 * Sample Output
+	 * Sample Output :
+	 * <p>
 	 * [h1v1, v1h1, d1]
 	 *
 	 * @param sr source row
@@ -887,12 +913,14 @@ public class RecursionMain
 	 * Output
 	 * Subsequences of str in order hinted by Sample output
 	 * <p>
-	 * Example
-	 * Sample Input
+	 * Example :
+	 * <p>
+	 * Sample Input :
 	 * <p>
 	 * yvTA
 	 * <p>
-	 * Sample Output
+	 * Sample Output :
+	 * <p>
 	 * yvTA
 	 * yvT
 	 * yvA
@@ -949,12 +977,14 @@ public class RecursionMain
 	 * Words that can be produced by pressed keys indictated by str in order hinted by Sample output
 	 * <p>
 	 *
-	 * Example
-	 * Sample Input
+	 * Example :
+	 * <p>
+	 * Sample Input :
 	 * <p>
 	 * 78
 	 * <p>
-	 * Sample Output
+	 * Sample Output :
+	 * <p>
 	 * tv
 	 * tw
 	 * tx
@@ -1004,11 +1034,13 @@ public class RecursionMain
 	 * Print paths (one path in each line) in order hinted by Sample output
 	 * <p>
 	 * Example
-	 * Sample Input
+	 * <p>
+	 * Sample Input :
 	 * <p>
 	 * 3
 	 * <p>
-	 * Sample Output
+	 * Sample Output :
+	 * <p>
 	 * 111
 	 * 12
 	 * 21
@@ -1031,6 +1063,64 @@ public class RecursionMain
 		printStairPaths(n - 1, path + "1");
 		printStairPaths(n - 2, path + "2");
 		printStairPaths(n - 3, path + "3");
+	}
+
+	/**
+	 * Print Maze Paths
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given a number n and a number m representing number of rows and columns in a maze.
+	 * 2. You are standing in the top-left corner and have to reach the bottom-right corner. Only two moves are allowed 'h' (1-step horizontal) and 'v' (1-step vertical).
+	 * 3. Complete the body of pri tMazePath function - without changing signature - to print the list of all paths that can be used to move from top-left to bottom-right.
+	 * Use sample input and output to take idea about output.
+	 * <p>
+	 *
+	 * Constraints
+	 * 0 <= n <= 10
+	 * 0 <= m <= 10
+	 * <p>
+	 * Format
+	 * Input
+	 * A number n
+	 * A number m
+	 * <p>
+	 * Output
+	 * Print paths (one path in each line) in order hinted by Sample output
+	 * <p>
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * 2
+	 * 2
+	 * <p>
+	 * Sample Output
+	 * <p>
+	 * hv
+	 * vh
+	 *
+	 * @param sr source row
+	 * @param sc source column
+	 * @param dr destination row
+	 * @param dc destination column
+	 * @param path the paths to follow
+	 */
+	public static void printMazePaths(int sr, int sc, int dr, int dc, String path)
+	{
+		if( sr == dr && sc == dc )
+		{
+			System.out.println(path);
+		}
+
+		if( sc < dc )
+		{
+			printMazePaths(sr, sc + 1, dr, dc, path + "h");
+		}
+
+		if( sr < dr )
+		{
+			printMazePaths(sr + 1, sc, dr, dc, path + "v");
+		}
 	}
 
 }
