@@ -22,7 +22,11 @@ public class RecursionMain
 		System.out.println("###### Get Subsequence ######");
 		System.out.println(getSubsequence("abc"));
 
+		System.out.println("###### Get Maze Path ######");
 		System.out.println(getMazePaths(1,1, 3, 3));
+
+		System.out.println("###### Print Subsequence ######");
+		printSubsequence("abc", "");
 
 	}
 
@@ -855,6 +859,67 @@ public class RecursionMain
 		}
 
 		return paths;
+	}
+
+	/**
+	 *Print Subsequence
+	 * Easy
+	 *
+	 * 1. You are given a string str.
+	 * 2. Complete the body of printSS function - without changing signature - to calculate and print all subsequences of str.
+	 * Use sample input and output to take idea about subsequences.
+	 *
+	 * Note -> The online judge can't force you to write the function recursively but that is what the spirit of question is. Write recursive and not iterative logic. The purpose of the question is to aid learning recursion and not test you.
+	 *
+	 * Constraints
+	 * 0 <= str.length <= 7
+	 *
+	 * Format
+	 * Input
+	 * A string str
+	 *
+	 * Output
+	 * Subsequences of str in order hinted by Sample output
+	 *
+	 * Example
+	 * Sample Input
+	 *
+	 * yvTA
+	 *
+	 * Sample Output
+	 * yvTA
+	 * yvT
+	 * yvA
+	 * yv
+	 * yTA
+	 * yT
+	 * yA
+	 * y
+	 * vTA
+	 * vT
+	 * vA
+	 * v
+	 * TA
+	 * T
+	 * A
+	 *
+	 * @param str the string
+	 * @param ans the final answer string
+	 */
+	public static void printSubsequence(String str, String ans)
+	{
+		if( str.length() == 0 )
+		{
+			System.out.println(ans);
+			return;
+		}
+
+		char ch = str.charAt(0);
+		String roq = str.substring(1);
+
+		printSubsequence(roq, ans + ch);
+		printSubsequence(roq, ans + "");
+
 	}
 
 }
