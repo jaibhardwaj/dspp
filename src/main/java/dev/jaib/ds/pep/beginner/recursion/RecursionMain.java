@@ -23,7 +23,7 @@ public class RecursionMain
 		System.out.println(getSubsequence("abc"));
 
 		System.out.println("###### Get Maze Path ######");
-		System.out.println(getMazePaths(1,1, 3, 3));
+		System.out.println(getMazePaths(1, 1, 3, 3));
 
 		System.out.println("###### Print Subsequence ######");
 		printSubsequence("abc", "");
@@ -40,10 +40,15 @@ public class RecursionMain
 		System.out.println("###### Print Maze Paths With Jump ######");
 		printMazePathsWithJump(1, 1, 3, 3, "");
 
+		System.out.println("###### Print Permutation ######");
+		printPermutations("abc", "");
+
+		System.out.println("###### Print Encodings ######");
+		printEncodings("123", "");
+
 	}
 
 	/**
-	 *
 	 * Tower Of Hanoi
 	 * <p>
 	 * Easy
@@ -56,11 +61,11 @@ public class RecursionMain
 	 * Input
 	 * A number n, representing number of disks A number n1, representing id of tower 1 A number n2, representing id of tower 2 A number n3, representing id of tower 3
 	 * <p>
-	 *
+	 * <p>
 	 * Output
 	 * n[n1 -> n2] .. A set of instructions in above format to represent, move nth disc from n1 tower to n2 tower
 	 * <p>
-	 *
+	 * <p>
 	 * Example :
 	 * <p>
 	 * Sample Input :
@@ -80,7 +85,7 @@ public class RecursionMain
 	 * 2[12 -> 11]
 	 * 1[10 -> 11]
 	 *
-	 * @param n the number of disks
+	 * @param n    the number of disks
 	 * @param t1id the tower id
 	 * @param t2id the tower id
 	 * @param t3id the tower id
@@ -92,13 +97,12 @@ public class RecursionMain
 			return;
 		}
 
-		towerOfHanoi( n - 1, t1id, t3id, t2id );
+		towerOfHanoi(n - 1, t1id, t3id, t2id);
 		System.out.println(n + "[" + t1id + " -> " + t2id + "]");
-		towerOfHanoi( n - 1, t3id, t2id, t1id );
+		towerOfHanoi(n - 1, t3id, t2id, t1id);
 	}
 
 	/**
-	 *
 	 * Display Array
 	 * <p>
 	 * Easy
@@ -159,7 +163,6 @@ public class RecursionMain
 	}
 
 	/**
-	 *
 	 * Display Array In Reverse
 	 * <p>
 	 * Easy
@@ -234,7 +237,6 @@ public class RecursionMain
 
 
 	/**
-	 *
 	 * Max Of An Array
 	 * <p>
 	 * Easy
@@ -299,7 +301,6 @@ public class RecursionMain
 	}
 
 	/**
-	 *
 	 * First Index
 	 * <p>
 	 * Easy
@@ -346,18 +347,18 @@ public class RecursionMain
 	 *
 	 * @param arr the given array
 	 * @param idx the index
-	 * @param x the element to find
+	 * @param x   the element to find
 	 * @return the index of the element
 	 */
 	public static int firstIndex(int[] arr, int idx, int x)
 	{
-		if (idx == arr.length)
+		if( idx == arr.length )
 		{
 			return -1;
 		}
 
 
-		if (arr[idx] == x)
+		if( arr[idx] == x )
 		{
 			return idx;
 		}
@@ -366,7 +367,6 @@ public class RecursionMain
 	}
 
 	/**
-	 *
 	 * Last Index
 	 * <p>
 	 * Easy
@@ -410,9 +410,10 @@ public class RecursionMain
 	 * Sample Output :
 	 * <p>
 	 * 4
+	 *
 	 * @param arr the array
 	 * @param idx the index
-	 * @param x the element to find
+	 * @param x   the element to find
 	 * @return the last index of element
 	 */
 	public static int lastIndex(int[] arr, int idx, int x)
@@ -442,7 +443,6 @@ public class RecursionMain
 	}
 
 	/**
-	 *
 	 * All Indices Of Array
 	 * <p>
 	 * Easy
@@ -460,20 +460,20 @@ public class RecursionMain
 	 * 6. If no such element exist print "NO OUTPUT" a.
 	 *
 	 * <p>
-	 *
+	 * <p>
 	 * Constraints
 	 * 1 <= n <= 10^4 0 <= n1, n2, .. n elements <= 10 ^ 3 0 <= x <= 10 ^ 3
 	 * <p>
-	 *
+	 * <p>
 	 * Format
 	 * Input
 	 * A number n n1 n2 .. n number of elements A number x
 	 * <p>
-	 *
+	 * <p>
 	 * Output
 	 * Return the array of indices from the allIndices function. Display is managed for you.
 	 * <p>
-	 *
+	 * <p>
 	 * Example :
 	 * <p>
 	 * Sample Input :
@@ -493,7 +493,7 @@ public class RecursionMain
 	 * 4
 	 *
 	 * @param arr the array
-	 * @param x the element
+	 * @param x   the element
 	 * @param idx the index
 	 * @param fsf the indices found so far
 	 * @return the array containing the indices of elements in array
@@ -521,27 +521,26 @@ public class RecursionMain
 	}
 
 	/**
-	 *
 	 * Get Subsequence
 	 * <p>
 	 * Easy
 	 * <p>
 	 * 1. You are given a string str. 2. Complete the body of getSS function - without changing signature - to calculate all subsequences of str. Use sample input and output to take idea about subsequences.
 	 * <p>
-	 *
+	 * <p>
 	 * Constraints
 	 * 0 <= str.length <= 20
 	 * <p>
-	 *
+	 * <p>
 	 * Format
 	 * Input
 	 * A string str
 	 * <p>
-	 *
+	 * <p>
 	 * Output
 	 * Contents of the arraylist containing subsequences as shown in sample output
 	 * <p>
-	 *
+	 * <p>
 	 * Example:
 	 * <p>
 	 * Sample Input:
@@ -582,26 +581,25 @@ public class RecursionMain
 		return mres;
 	}
 
-	static String[] codes = {".;", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx","yz"};
+	static String[] codes = {".;", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx", "yz"};
 
 	/**
-	 *
 	 * Get Kpc
 	 * <p>
 	 * Easy
 	 * <p>
 	 * 1. You are given a string str. The string str will contains numbers only, where each number stands for a key pressed on a mobile phone.
 	 * 2. The following list is the key to characters map :
-	 *     0 -> .;
-	 *     1 -> abc
-	 *     2 -> def
-	 *     3 -> ghi
-	 *     4 -> jkl
-	 *     5 -> mno
-	 *     6 -> pqrs
-	 *     7 -> tu
-	 *     8 -> vwx
-	 *     9 -> yz
+	 * 0 -> .;
+	 * 1 -> abc
+	 * 2 -> def
+	 * 3 -> ghi
+	 * 4 -> jkl
+	 * 5 -> mno
+	 * 6 -> pqrs
+	 * 7 -> tu
+	 * 8 -> vwx
+	 * 9 -> yz
 	 * 3. Complete the body of getKPC function - without changing signature - to get the list of all words that could be produced by the keys in str.
 	 * Use sample input and output to take idea about output.
 	 * <p>
@@ -650,7 +648,7 @@ public class RecursionMain
 
 		for( char c : codeforch.toCharArray() )
 		{
-			for( String val: rres)
+			for( String val : rres )
 			{
 				mres.add(val + c);
 			}
@@ -661,7 +659,6 @@ public class RecursionMain
 
 
 	/**
-	 *
 	 * Get Stair Paths
 	 * <p>
 	 * Easy
@@ -732,7 +729,6 @@ public class RecursionMain
 	}
 
 	/**
-	 *
 	 * Get Maze Paths
 	 * <p>
 	 * Easy
@@ -742,7 +738,7 @@ public class RecursionMain
 	 * 3. Complete the body of getMazePath function - without changing signature - to get the list of all paths that can be used to move from top-left to bottom-right.
 	 * Use sample input and output to take idea about output.
 	 * <p>
-	 *
+	 * <p>
 	 * Constraints
 	 * 0 <= n <= 10
 	 * 0 <= m <= 10
@@ -801,7 +797,7 @@ public class RecursionMain
 			paths.add("h" + hpath);
 		}
 
-		for( String vpath: vpaths )
+		for( String vpath : vpaths )
 		{
 			paths.add("v" + vpath);
 		}
@@ -819,7 +815,7 @@ public class RecursionMain
 	 * 4. Complete the body of getMazePath function - without changing signature - to get the list of all paths that can be used to move from top-left to bottom-right.
 	 * Use sample input and output to take idea about output.
 	 * <p>
-	 *
+	 * <p>
 	 * Constraints
 	 * 0 <= n <= 10
 	 * 0 <= m <= 10
@@ -905,7 +901,7 @@ public class RecursionMain
 	 * 2. Complete the body of printSS function - without changing signature - to calculate and print all subsequences of str.
 	 * Use sample input and output to take idea about subsequences.
 	 * <p>
-	 *
+	 * <p>
 	 * Constraints
 	 * 0 <= str.length <= 7
 	 * <p>
@@ -966,20 +962,20 @@ public class RecursionMain
 	 * <p>
 	 * 1. You are given a string str. The string str will contains numbers only, where each number stands for a key pressed on a mobile phone. 2. The following list is the key to characters map 0 -> .; 1 -> abc 2 -> def 3 -> ghi 4 -> jkl 5 -> mno 6 -> pqrs 7 -> tu 8 -> vwx 9 -> yz 3. Complete the body of printKPC function - without changing signature - to print the list of all words that could be produced by the keys in str. Use sample input and output to take idea about output.
 	 * <p>
-	 *
+	 * <p>
 	 * Constraints
 	 * 0 <= str.length <= 10 str contains numbers only
 	 * <p>
-	 *
+	 * <p>
 	 * Format
 	 * Input
 	 * A string str
 	 * <p>
-	 *
+	 * <p>
 	 * Output
 	 * Words that can be produced by pressed keys indictated by str in order hinted by Sample output
 	 * <p>
-	 *
+	 * <p>
 	 * Example :
 	 * <p>
 	 * Sample Input :
@@ -1025,7 +1021,7 @@ public class RecursionMain
 	 * 3. Complete the body of printStairPaths function - without changing signature - to print the list of all paths that can be used to climb the staircase up.
 	 * Use sample input and output to take idea about output.
 	 * <p>
-	 *
+	 * <p>
 	 * Constraints
 	 * 0 <= n <= 10
 	 * <p>
@@ -1048,7 +1044,8 @@ public class RecursionMain
 	 * 12
 	 * 21
 	 * 3
-	 * @param n the stairs in staircase
+	 *
+	 * @param n    the stairs in staircase
 	 * @param path the path to climb
 	 */
 	public static void printStairPaths(int n, String path)
@@ -1078,7 +1075,7 @@ public class RecursionMain
 	 * 3. Complete the body of pri tMazePath function - without changing signature - to print the list of all paths that can be used to move from top-left to bottom-right.
 	 * Use sample input and output to take idea about output.
 	 * <p>
-	 *
+	 * <p>
 	 * Constraints
 	 * 0 <= n <= 10
 	 * 0 <= m <= 10
@@ -1102,10 +1099,10 @@ public class RecursionMain
 	 * hv
 	 * vh
 	 *
-	 * @param sr source row
-	 * @param sc source column
-	 * @param dr destination row
-	 * @param dc destination column
+	 * @param sr   source row
+	 * @param sc   source column
+	 * @param dr   destination row
+	 * @param dc   destination column
 	 * @param path the paths to follow
 	 */
 	public static void printMazePaths(int sr, int sc, int dr, int dc, String path)
@@ -1137,7 +1134,7 @@ public class RecursionMain
 	 * 4. Complete the body of printMazePath function - without changing signature - to print the list of all paths that can be used to move from top-left to bottom-right.
 	 * Use sample input and output to take idea about output.
 	 * <p>
-	 *
+	 * <p>
 	 * Constraints
 	 * 0 <= n <= 5
 	 * 0 <= m <= 5
@@ -1154,7 +1151,7 @@ public class RecursionMain
 	 * <p>
 	 * Sample Input :
 	 * <p>
-	 *
+	 * <p>
 	 * 3
 	 * 3
 	 * <p>
@@ -1183,10 +1180,10 @@ public class RecursionMain
 	 * d1d1
 	 * d2
 	 *
-	 * @param sr source row
-	 * @param sc source column
-	 * @param dr destination row
-	 * @param dc destination column
+	 * @param sr   source row
+	 * @param sc   source column
+	 * @param dr   destination row
+	 * @param dc   destination column
 	 * @param path the paths to follow
 	 */
 	public static void printMazePathsWithJump(int sr, int sc, int dr, int dc, String path)
@@ -1221,4 +1218,164 @@ public class RecursionMain
 		}
 	}
 
+	/**
+	 * Print Permutations
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given a string str.
+	 * 2. Complete the body of printPermutations function - without changing signature - to calculate and print all permutations of str.
+	 * Use sample input and output to take idea about permutations.
+	 * <p>
+	 * <p>
+	 * Constraints
+	 * 0 <= str.length <= 7
+	 * <p>
+	 * Format
+	 * Input :
+	 * <p>
+	 * A string str
+	 * <p>
+	 * Output :
+	 * <p>
+	 * Permutations of str in order hinted by Sample output
+	 * <p>
+	 * Example :
+	 * <p>
+	 * Sample Input :
+	 * <p>
+	 * abc
+	 * <p>
+	 * Sample Output :
+	 * <p>
+	 * abc
+	 * acb
+	 * bac
+	 * bca
+	 * cab
+	 * cba
+	 *
+	 * @param str the string
+	 * @param ans the answer containing permutation of string
+	 */
+	public static void printPermutations(String str, String ans)
+	{
+		if( str.length() == 0 )
+		{
+			System.out.println(ans); // Question string is empty so print the answer now and return
+			return;
+		}
+
+		// Extracting each character at a time from the question string and appending it to answer so far
+		for( int i = 0; i < str.length(); i++ )
+		{
+			char ch = str.charAt(i);
+
+			// Substring from 0 to i-1 (left to ch) + Substring from i+1 till end of String (right to ch)
+			// Remaining string after extracting ch
+			String ros = str.substring(0, i) + str.substring(i + 1);
+
+			printPermutations(ros, ans + ch);
+		}
+	}
+
+
+	/**
+	 * Print Encodings
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given a string str of digits. (will never start with a 0)
+	 * 2. You are required to encode the str as per following rules
+	 *     1 -> a
+	 *     2 -> b
+	 *     3 -> c
+	 *     ..
+	 *     25 -> y
+	 *     26 -> z
+	 * 3. Complete the body of printEncodings function - without changing signature - to calculate and print all encodings of str.
+	 * Use the input-output below to get more understanding on what is required
+	 * 123 -> abc, aw, lc
+	 * 993 -> iic
+	 * 013 -> Invalid input. A string starting with 0 will not be passed.
+	 * 103 -> jc
+	 * 303 -> No output possible. But such a string maybe passed. In this case print nothing.
+	 * <p>
+	 *
+	 * Constraints
+	 * <p>
+	 * 0 <= str.length <= 10
+	 * <p>
+	 * Format
+	 * <p>
+	 * Input
+	 * A string str
+	 * <p>
+	 * Output
+	 * Permutations of str in order hinted by Sample output
+	 * <p>
+	 * Example :
+	 * <p>
+	 * Sample Input :
+	 * <p>
+	 * 655196
+	 * <p>
+	 * Sample Output :
+	 * <p>
+	 * feeaif
+	 * feesf
+	 *
+	 * @param str the number string
+	 * @param ans the answer containing the encoding
+	 */
+	public static void printEncodings(String str, String ans)
+	{
+		if( str.length() == 0 )
+		{
+			System.out.println(ans);
+		}
+		else if( str.length() == 1 )
+		{
+			char ch = str.charAt(0);
+
+			if( ch == '0' )
+			{
+				return;
+			}
+			else
+			{
+				int chv = ch - '0';
+				char code = (char) ('a' + chv - 1);
+				System.out.println(ans + code);
+			}
+		}
+		else
+		{
+			char ch = str.charAt(0);
+			String roq = str.substring(1);
+
+			if( ch == '0' )
+			{
+				return;
+			}
+			else
+			{
+				int chv = ch - '0';
+				char code = (char) ('a' + chv - 1);
+				printEncodings(roq, ans + code);
+			}
+
+			String ch12 = str.substring(0, 2);
+			String roq12 = str.substring(2);
+
+			int ch12v = Integer.parseInt(ch12);
+
+			if( ch12v <= 26 )
+			{
+				char code = (char) ('a' + ch12v - 1);
+				printEncodings(roq12, ans + code);
+			}
+
+		}
+	}
 }
