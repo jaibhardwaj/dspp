@@ -46,6 +46,20 @@ public class RecursionMain
 		System.out.println("###### Print Encodings ######");
 		printEncodings("123", "");
 
+		System.out.println("###### Print Flood Fills ######");
+		int[][] maze = new int[3][3];
+		maze[0][0] = 0;
+		maze[0][1] = 0;
+		maze[0][2] = 0;
+		maze[1][0] = 1;
+		maze[1][1] = 0;
+		maze[1][2] = 1;
+		maze[2][0] = 0;
+		maze[2][1] = 0;
+		maze[2][2] = 0;
+		boolean[][] visited = new boolean[3][3];
+		floodfill(maze, 0, 0, "", visited);
+
 	}
 
 	/**
@@ -1377,5 +1391,91 @@ public class RecursionMain
 			}
 
 		}
+	}
+
+	/**
+	 * Flood Fill
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given a number n, representing the number of rows.
+	 * <p>
+	 * 2. You are given a number m, representing the number of columns.
+	 * <p>
+	 * 3. You are given n*m numbers, representing elements of 2d array a. The numbers can be 1 or 0 only.
+	 * <p>
+	 * 4. You are standing in the top-left corner and have to reach the bottom-right corner.
+	 * <p>
+	 * Only four moves are allowed 't' (1-step up), 'l' (1-step left), 'd' (1-step down) 'r' (1-step right). You can only move to cells which have 0 value in them. You can't move out of the boundaries or in the cells which have value 1 in them (1 means obstacle)
+	 * <p>
+	 * 5. Complete the body of floodfill function - without changing signature - to print all paths that can be used to move from top-left to bottom-right.
+	 * <p>
+	 * Note1 -> Please check the sample input and output for details
+	 * <p>
+	 * Note2 -> If all four moves are available make moves in the order 't', 'l', 'd' and 'r'
+	 * <p>
+	 * Constraints
+	 * <p>
+	 * 1 <= n <= 10
+	 * 1 <= m <= 10
+	 * e1, e2, .. n * m elements belongs to set (0, 1)
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * A number n
+	 * A number m
+	 * e11
+	 * e12..
+	 * e21
+	 * e22..
+	 * .. n * m number of elements
+	 * <p>
+	 * Output :
+	 * <p>
+	 * trrrdlt
+	 * tlldrt
+	 * .. and so on
+	 * <p>
+	 * Example
+	 * Sample Input :
+	 * <p>
+	 * 3 3
+	 * <p>
+	 * 0 0 0
+	 * <p>
+	 * 1 0 1
+	 * <p>
+	 * 0 0 0
+	 * <p>
+	 * Sample Output :
+	 * <p>
+	 * rddr
+	 *
+	 * @param maze the maze
+	 * @param sr the row index
+	 * @param sc the column index
+	 * @param asf the answer so far
+	 * @param visited is cell visited
+	 */
+	public static void floodfill(int[][] maze, int sr, int sc, String asf, boolean[][] visited)
+	{
+		if( sr < 0 || sc < 0 || sr == maze.length || sc == maze[0].length || maze[sr][sc] == 1 || visited[sr][sc] )
+		{
+			return;
+		}
+		if( sr == maze.length - 1 && sc == maze[0].length - 1 )
+		{
+			System.out.println(asf);
+			return;
+		}
+		visited[sr][sc] = true;
+		floodfill(maze, sr - 1, sc, asf + "t", visited);
+		floodfill(maze, sr, sc - 1, asf + "l", visited);
+		floodfill(maze, sr + 1, sc, asf + "d", visited);
+		floodfill(maze, sr, sc + 1, asf + "r", visited);
+		visited[sr][sc] = false;
+
+
 	}
 }
