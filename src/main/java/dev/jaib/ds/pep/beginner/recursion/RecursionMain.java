@@ -9,7 +9,7 @@ public class RecursionMain
 		System.out.println("###### Tower of Hanoi ######");
 		towerOfHanoi(3, 10, 11, 12);
 
-		int[] arr = {10, 11, 12, 13, 14, 15};
+		int[] arr = {10, 20, 30, 40, 50, 60};
 		System.out.println("###### Display Array ######");
 		displayArray(arr, 0);
 
@@ -59,6 +59,9 @@ public class RecursionMain
 		maze[2][2] = 0;
 		boolean[][] visited = new boolean[3][3];
 		floodfill(maze, 0, 0, "", visited);
+
+		System.out.println("###### Print Target Sum Subset ######");
+		printTargetSumSubsets(arr, 0, "", 0, 70);
 
 	}
 
@@ -1475,7 +1478,77 @@ public class RecursionMain
 		floodfill(maze, sr + 1, sc, asf + "d", visited);
 		floodfill(maze, sr, sc + 1, asf + "r", visited);
 		visited[sr][sc] = false;
+	}
 
+	/**
+	 * Target Sum Subsets
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given a number n, representing the count of elements.
+	 * 2. You are given n numbers.
+	 * 3. You are given a number "tar".
+	 * 4. Complete the body of printTargetSumSubsets function - without changing signature - to calculate and print all subsets of given elements, the contents of which sum to "tar". Use sample input and output to get more idea.
+	 * <p>
+	 *
+	 * Constraints
+	 * <p>
+	 * 1 <= n <= 30
+	 * 0 <= n1, n2, .. n elements <= 20
+	 * 0 <= tar <= 50
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * Input Format
+	 * <p>
+	 * A number n
+	 * n1
+	 * n2
+	 * .. n number of elements
+	 * A number tar
+	 * <p>
+	 * Output
+	 * <p>
+	 * Comma separated elements of the subset, the contents of which add to "tar"
+	 * .. all such subsets, each in a single line (the elements of each subset should be comma separated)
+	 * <p>
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * 5
+	 * 10
+	 * 20
+	 * 30
+	 * 40
+	 * 50
+	 * 60
+	 * <p>
+	 * Sample Output :
+	 * <p>
+	 * 10, 20, 30, .
+	 * 10, 50, .
+	 * 20, 40, .
+	 *
+	 * @param arr the array
+	 * @param idx the index
+	 * @param set the subset
+	 * @param sos the sum of subset
+	 * @param tar the target sum
+	 */
+	public static void printTargetSumSubsets(int[] arr, int idx, String set, int sos, int tar)
+	{
+		if( idx == arr.length )
+		{
+			if( sos == tar )
+			{
+				System.out.println(set + ".");
+			}
+			return;
+		}
+
+		printTargetSumSubsets(arr, idx + 1, set + arr[idx] + ", ", sos + arr[idx], tar);
+		printTargetSumSubsets(arr, idx + 1, set, sos, tar);
 
 	}
 }
