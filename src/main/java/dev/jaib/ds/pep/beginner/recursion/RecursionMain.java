@@ -63,6 +63,10 @@ public class RecursionMain
 		System.out.println("###### Print Target Sum Subset ######");
 		printTargetSumSubsets(arr, 0, "", 0, 70);
 
+		System.out.println("###### Print N Queens ######");
+		int[][] arr1 = new int[4][4];
+		printNQueens(arr1, "", 0);
+
 	}
 
 	/**
@@ -1549,6 +1553,100 @@ public class RecursionMain
 
 		printTargetSumSubsets(arr, idx + 1, set + arr[idx] + ", ", sos + arr[idx], tar);
 		printTargetSumSubsets(arr, idx + 1, set, sos, tar);
+	}
 
+	/**
+	 * N Queens
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given a number n, the size of a chess board.
+	 * 2. You are required to place n number of queens in the n * n cells of board such that no queen can kill another.
+	 * Note - Queens kill at distance in all 8 directions
+	 * 3. Complete the body of printNQueens function - without changing signature - to calculate and print all safe configurations of n-queens. Use sample input and output to get more idea.
+	 * <p>
+	 *
+	 * Constraints
+	 * <p>
+	 * 1 <= n <= 10
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * A number n
+	 * <p>
+	 * Output :
+	 * <p>
+	 * Safe configurations of queens as suggested in sample output
+	 * <p>
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * 4
+	 * <p>
+	 * Sample Output :
+	 * <p>
+	 * 0-1, 1-3, 2-0, 3-2, .
+	 * 0-2, 1-0, 2-3, 3-1, .
+	 * <p>
+	 *
+	 * @param chess the 2d array
+	 * @param qsf the question so far
+	 * @param row the row index
+	 */
+	public static void printNQueens(int[][] chess, String qsf, int row)
+	{
+		if( row == chess.length )
+		{
+			System.out.println(qsf + ".");
+			return;
+		}
+		for( int col = 0; col < chess.length; col++ )
+		{
+			if( chess[row][col] == 0 && isQueenSafe(chess, row, col))
+			{
+				chess[row][col] = 1;
+				printNQueens(chess,
+						qsf + row + "-" + col + ", ", row + 1);
+				chess[row][col] = 0;
+			}
+		}
+	}
+
+	private static boolean isQueenSafe(int[][] chess, int row, int col)
+	{
+		for( int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j-- )
+		{
+			if( chess[i][j] == 1 )
+			{
+				return false;
+			}
+		}
+
+		for( int i = row - 1, j = col; i >= 0; i-- )
+		{
+			if( chess[i][j] == 1 )
+			{
+				return false;
+			}
+		}
+
+		for( int i = row - 1, j = col + 1; i >= 0 && j < chess.length; i--, j++ )
+		{
+			if( chess[i][j] == 1 )
+			{
+				return false;
+			}
+		}
+
+		for( int i = row, j = col - 1; j >= 0; j-- )
+		{
+			if( chess[i][j] == 1 )
+			{
+				return false;
+			}
+		}
+
+		return true;
 	}
 }
