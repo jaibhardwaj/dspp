@@ -132,5 +132,101 @@ public class SortingMain
 		}
 	}
 
+	/**
+	 * Selection Sort
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given an array(arr) of integers.
+	 * <p>
+	 * 2. You have to sort the given array in increasing order using selection sort.
+	 * <p>
+	 * Constraints
+	 * <p>
+	 * 1 <= N <= 10000
+	 * <p>
+	 * -10^9 <= arr[i] <= 10^9
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * An Integer n
+	 * arr1
+	 * arr2..
+	 * n integers
+	 * <p>
+	 * Output
+	 * <p>
+	 * Check the sample ouput and question video.
+	 * <p>
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * 5
+	 * 7
+	 * -2
+	 * 4
+	 * 1
+	 * 3
+	 * <p>
+	 * Sample Output
+	 * <p>
+	 * Comparing -2 and 7
+	 * <p>
+	 * Comparing 4 and -2
+	 * <p>
+	 * Comparing 1 and -2
+	 * <p>
+	 * Comparing 3 and -2
+	 * <p>
+	 * Swapping 7 and -2
+	 * <p>
+	 * Comparing 4 and 7
+	 * <p>
+	 * Comparing 1 and 4
+	 * <p>
+	 * Comparing 3 and 1
+	 * <p>
+	 * Swapping 7 and 1
+	 * <p>
+	 * Comparing 7 and 4
+	 * <p>
+	 * Comparing 3 and 4
+	 * <p>
+	 * Swapping 4 and 3
+	 * <p>
+	 * Comparing 4 and 7
+	 * <p>
+	 * Swapping 7 and 4
+	 * <p>
+	 * -2
+	 * <p>
+	 * 1
+	 * <p>
+	 * 3
+	 * <p>
+	 * 4
+	 * <p>
+	 * 7
+	 *
+	 * @param arr the given array
+	 */
+	public static void selectionSort(int[] arr)
+	{
+		for( int i = 0; i < arr.length - 1; i++ )
+		{
+			int min = i;
+
+			for( int j = i + 1; j < arr.length; j++ )
+			{
+				if( isSmaller(arr, j, min) )
+				{
+					min = j;
+				}
+			}
+			swap(arr, i, min);
+		}
+	}
+
 
 }

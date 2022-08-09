@@ -15,4 +15,13 @@ public class SortingMainTest
 		SortingMain.bubbleSort(givenArr);
 		assertArrayEquals(result, givenArr);
 	}
+
+	@Test
+	public void selectionSortTest()
+	{
+		int[] givenArr = {15, 30, 40, 4, 11, 9};
+		int[] result = {4, 9, 11, 15, 30, 40};
+		SortingMain.selectionSort(givenArr);
+		assertArrayEquals(result, givenArr);
+	}
 }
