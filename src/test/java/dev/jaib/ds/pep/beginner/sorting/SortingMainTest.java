@@ -63,4 +63,14 @@ public class SortingMainTest
 		SortingMain.partitionAnArrayOnPivot(givenArr, pivot);
 		assertArrayEquals(result, givenArr);
 	}
+
+	@Test
+	public void quickSortTest()
+	{
+		int[] givenArr = {15, 30, 40, 4, 11, 9};
+		int[] result = {4, 9, 11, 15, 30, 40};
+		SortingMain.quickSort(givenArr, 0, 5);
+
+		assertArrayEquals(result, givenArr);
+	}
 }

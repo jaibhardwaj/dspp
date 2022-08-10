@@ -606,4 +606,121 @@ public class SortingMain
 
 	}
 
+	/**
+	 * Quick Sort
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given an array(arr) of integers.
+	 * <p>
+	 * 2. You have to sort the given array in increasing order using quick-sort.
+	 * <p>
+	 * Constraints
+	 * <p>
+	 * 1 <= N <= 100000
+	 * <p>
+	 * -10^9 <= arr[i] <= 10^9
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * An Integer n
+	 * arr1
+	 * arr2..
+	 * n integers
+	 * <p>
+	 * Output
+	 * <p>
+	 * Check the sample output and question video.
+	 * <p>
+	 * Example
+	 * Sample Input :
+	 * <p>
+	 * 5
+	 * 7
+	 * -2
+	 * 4
+	 * 1
+	 * 3
+	 * <p>
+	 * Sample Output :
+	 * <p>
+	 * pivot -> 3
+	 * <p>
+	 * Swapping -2 and 7
+	 * <p>
+	 * Swapping 1 and 7
+	 * <p>
+	 * Swapping 3 and 4
+	 * <p>
+	 * pivot index -> 2
+	 * <p>
+	 * pivot -> 1
+	 * <p>
+	 * Swapping -2 and -2
+	 * <p>
+	 * Swapping 1 and 1
+	 * <p>
+	 * pivot index -> 1
+	 * <p>
+	 * pivot -> -2
+	 * <p>
+	 * Swapping -2 and -2
+	 * <p>
+	 * pivot index -> 0
+	 * <p>
+	 * pivot -> 4
+	 * <p>
+	 * Swapping 4 and 7
+	 * <p>
+	 * pivot index -> 3
+	 * <p>
+	 * pivot -> 7
+	 * <p>
+	 * Swapping 7 and 7
+	 * <p>
+	 * pivot index -> 4
+	 * <p>
+	 * -2 1 3 4 7
+	 *
+	 * @param arr the given array
+	 * @param lo the first index
+	 * @param hi the last index
+	 */
+	public static void quickSort(int[] arr, int lo, int hi)
+	{
+		if( lo >= hi )
+		{
+			return;
+		}
+
+		int pivot = arr[hi];
+
+		int pi = partition(arr, pivot, lo, hi);
+
+		quickSort(arr, lo, pi - 1);
+		quickSort(arr, pi + 1, hi);
+	}
+
+	public static int partition(int[] arr, int pivot, int lo, int hi)
+	{
+		System.out.println("pivot -> " + pivot);
+		int i = lo, j = lo;
+		while(i <= hi)
+		{
+			if( arr[i] <= pivot )
+			{
+				swap(arr, i, j);
+				i++;
+				j++;
+			}
+			else
+			{
+				i++;
+			}
+		}
+		System.out.println("pivot index -> " + (j - 1));
+		return (j - 1);
+	}
+
 }
