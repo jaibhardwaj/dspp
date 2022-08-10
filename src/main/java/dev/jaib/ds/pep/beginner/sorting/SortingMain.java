@@ -342,4 +342,104 @@ public class SortingMain
 
 	}
 
+	/**
+	 * Merge Two Sorted Arrays
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given two sorted arrays(a,b) of integers.
+	 * 2. You have to merge them and form one sorted array.
+	 * 3. You have to do it in linear time complexity.
+	 * <p>
+	 * Constraints
+	 * <p>
+	 * 1 <= N <= 10^8
+	 * <p>
+	 * -10^9 <= a[i],b[i] <= 10^9
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * An Integer n
+	 * a1
+	 * a2..n integers
+	 * <p>
+	 * An integer m
+	 * b1
+	 * b2..m integers
+	 * <p>
+	 *
+	 * Output
+	 * <p>
+	 * Check the sample output and question video.
+	 * <p>
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * 4
+	 * -2
+	 * 5
+	 * 9
+	 * 11
+	 * 3
+	 * 4
+	 * 6
+	 * 8
+	 * <p>
+	 * Sample Output
+	 * <p>
+	 * -2
+	 * 4
+	 * 5
+	 * 6
+	 * 8
+	 * 9
+	 * 11
+	 *
+	 * @param a the first sorted array
+	 * @param b the second sorted array
+	 * @return the merged sorted array of given arrays
+	 */
+	public static int[] mergeTwoSortedArrays(int[] a, int[] b)
+	{
+		int l1 = a.length;
+		int l2 = b.length;
+
+		int[] c = new int[l1 + l2];
+
+		int i = 0, j = 0, k = 0;
+
+		while(i < l1 && j < l2)
+		{
+			if( a[i] < b[j] )
+			{
+				c[k] = a[i];
+				i++;
+			}
+			else
+			{
+				c[k] = b[j];
+				j++;
+			}
+
+			k++;
+		}
+
+		while(i < l1)
+		{
+			c[k] = a[i];
+			i++;
+			k++;
+		}
+
+		while(j < l2)
+		{
+			c[k] = b[j];
+			j++;
+			k++;
+		}
+
+		return c;
+	}
+
 }

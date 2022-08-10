@@ -33,4 +33,15 @@ public class SortingMainTest
 		SortingMain.insertionSort(givenArr);
 		assertArrayEquals(result, givenArr);
 	}
+
+	@Test
+	public void mergeTwoSortedArraysTest()
+	{
+		int[] sa1 = {-2, 5, 10, 18};
+		int[] sa2 = {4, 9, 11, 15, 30, 40};
+		int[] saResult = {-2, 4, 5, 9, 10, 11, 15, 18, 30, 40};
+		final int[] mergedArray = SortingMain.mergeTwoSortedArrays(sa1, sa2);
+
+		assertArrayEquals(saResult, mergedArray);
+	}
 }
