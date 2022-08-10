@@ -30,6 +30,20 @@ public class SortingMain
 		}
 	}
 
+	// return true if jth element is greater than ith element
+	public static boolean isGreater(int[] arr, int j, int i)
+	{
+		System.out.println("Comparing " + arr[i] + " and " + arr[j]);
+		if( arr[i] < arr[j] )
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	public static void print(int[] arr)
 	{
 		for( int i = 0; i < arr.length; i++ )
@@ -228,5 +242,104 @@ public class SortingMain
 		}
 	}
 
+	/**
+	 * Insertion Sort
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given an array(arr) of integers.
+	 * <p>
+	 * 2. You have to sort the given array in increasing order using insertion sort.
+	 * <p>
+	 * Constraints
+	 * <p>
+	 * 1 <= N <= 10000
+	 * <p>
+	 * -10^9 <= arr[i] <= 10^9
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * An Integer n
+	 * arr1
+	 * arr2..
+	 * n integers
+	 * <p>
+	 * Output
+	 * Check the sample output and question video.
+	 * <p>
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * 5
+	 * 7
+	 * -2
+	 * 4
+	 * 1
+	 * 3
+	 * <p>
+	 * Sample Output
+	 * <p>
+	 * Comparing -2 and 7
+	 * <p>
+	 * Swapping 7 and -2
+	 * <p>
+	 * Comparing 4 and 7
+	 * <p>
+	 * Swapping 7 and 4
+	 * <p>
+	 * Comparing 4 and -2
+	 * <p>
+	 * Comparing 1 and 7
+	 * <p>
+	 * Swapping 7 and 1
+	 * <p>
+	 * Comparing 1 and 4
+	 * <p>
+	 * Swapping 4 and 1
+	 * <p>
+	 * Comparing 1 and -2
+	 * <p>
+	 * Comparing 3 and 7
+	 * <p>
+	 * Swapping 7 and 3
+	 * <p>
+	 * Comparing 3 and 4
+	 * <p>
+	 * Swapping 4 and 3
+	 * <p>
+	 * Comparing 3 and 1
+	 * <p>
+	 * -2
+	 * <p>
+	 * 1
+	 * <p>
+	 * 3
+	 * <p>
+	 * 4
+	 * <p>
+	 * 7
+	 * @param arr the given array
+	 */
+	public static void insertionSort(int[] arr)
+	{
+		for( int i = 0; i < arr.length - 1; i++ )
+		{
+			int j = i + 1;
+			while(j > 0)
+			{
+				if( isGreater(arr, j - 1, j) )
+				{
+					swap(arr, j - 1, j);
+				}
+				else
+				{
+					break;
+				}
+				j--;
+			}
+		}
+
+	}
 
 }
