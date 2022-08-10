@@ -53,4 +53,14 @@ public class SortingMainTest
 
 		assertArrayEquals(result, mergedArray);
 	}
+
+	@Test
+	public void partitionAnArrayOnPivotTest()
+	{
+		int[] givenArr = {15, 30, 40, 4, 11, 9};
+		int pivot = 12;
+		int[] result = {4, 11, 9, 15, 30, 40};
+		SortingMain.partitionAnArrayOnPivot(givenArr, pivot);
+		assertArrayEquals(result, givenArr);
+	}
 }

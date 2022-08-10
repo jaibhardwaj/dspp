@@ -531,4 +531,79 @@ public class SortingMain
 		return fsa;
 	}
 
+	/**
+	 * Partition An Array
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given an array(arr) of integers and a pivot.
+	 * <p>
+	 * 2. You have to re-arrange the given array in such a way that all elements smaller or equal to pivot lie on the left side of pivot and all elements greater than pivot lie on its right side.
+	 * <p>
+	 * 3. You have to achieve this in linear time.
+	 * <p>
+	 *
+	 * Constraints
+	 * <p>
+	 * 1 <= N <= 100000
+	 * <p>
+	 * -10^9 <= arr[i] <= 10^9
+	 * <p>
+	 * -10^9 <= pivot <= 10^9
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * An Integer n
+	 * arr1
+	 * arr2..
+	 * n integers
+	 * <p>
+	 * An integer pivot
+	 * <p>
+	 * Output
+	 * <p>
+	 * Check the sample output and question video.
+	 * <p>
+	 * Example
+	 * Sample Input :
+	 * <p>
+	 * 5
+	 * 7
+	 * -2
+	 * 4
+	 * 1
+	 * 3
+	 * 3
+	 * <p>
+	 * Sample Output :
+	 * <p>
+	 * Swapping -2 and 7
+	 * <p>
+	 * Swapping 1 and 7
+	 * <p>
+	 * Swapping 3 and 4
+	 * <p>
+	 * -2 1 3 7 4
+	 *
+	 * @param arr the given array
+	 * @param pivot the pivot
+	 */
+	public static void partitionAnArrayOnPivot(int[] arr, int pivot)
+	{
+		int i = 0, j = 0;
+
+		while(i < arr.length)
+		{
+			if( arr[i] <= pivot )
+			{
+				swap(arr, i, j);
+				j++;
+			}
+
+			i++;
+		}
+
+	}
+
 }
