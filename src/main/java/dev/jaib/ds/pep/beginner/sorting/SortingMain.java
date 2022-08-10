@@ -442,4 +442,93 @@ public class SortingMain
 		return c;
 	}
 
+	/**
+	 * Merge Sort
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given an array(arr) of integers.
+	 * 2. You have to sort the given array in increasing order using the merge sort.
+	 * <p>
+	 * Constraints
+	 * <p>
+	 * 1 <= N <= 100000
+	 * <p>
+	 * -10^9 <= arr[i] <= 10^9
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * An Integer n
+	 * arr1
+	 * arr2..
+	 * n integers
+	 * <p>
+	 * Output
+	 * <p>
+	 * Check the sample output and question video.
+	 * <p>
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * 5
+	 * 7
+	 * -2
+	 * 4
+	 * 1
+	 * 3
+	 * <p>
+	 * Sample Output
+	 * <p>
+	 * Merging these two arrays
+	 * <p>
+	 * left array -> 7
+	 * <p>
+	 * right array -> -2
+	 * <p>
+	 * Merging these two arrays
+	 * <p>
+	 * left array -> -2 7
+	 * <p>
+	 * right array -> 4
+	 * <p>
+	 * Merging these two arrays
+	 * <p>
+	 * left array -> 1
+	 * <p>
+	 * right array -> 3
+	 * <p>
+	 * Merging these two arrays
+	 * <p>
+	 * left array -> -2 4 7
+	 * <p>
+	 * right array -> 1 3
+	 * <p>
+	 * Sorted Array -> -2 1 3 4 7
+	 * <p>
+	 *
+	 * @param arr the given array
+	 * @param lo the first index
+	 * @param hi the last index
+	 * @return the sorted array
+	 */
+	public static int[] mergeSort(int[] arr, int lo, int hi)
+	{
+		if( lo == hi )
+		{
+			int[] sa = new int[1];
+			sa[0] = arr[lo];
+			return sa;
+		}
+
+		int mid = (lo + hi) / 2;
+
+		int[] fsh = mergeSort(arr, lo, mid);
+		int[] ssh = mergeSort(arr, mid + 1, hi);
+
+		int[] fsa = mergeTwoSortedArrays(fsh, ssh);
+
+		return fsa;
+	}
+
 }
