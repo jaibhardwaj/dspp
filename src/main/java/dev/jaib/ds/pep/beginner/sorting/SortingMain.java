@@ -4,7 +4,8 @@ public class SortingMain
 {
 	public static void main(String[] args)
 	{
-
+		int[] arr = { 2, 8, 1, 3, 7, 6, 4, 5 };
+		System.out.println(quickSelect(arr, 0, 7, 4));
 	}
 
 	// used for swapping ith and jth elements of array
@@ -721,6 +722,86 @@ public class SortingMain
 		}
 		System.out.println("pivot index -> " + (j - 1));
 		return (j - 1);
+	}
+
+	/**
+	 * Quick Select
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given an array(arr) of integers.
+	 * <p>
+	 * 2. You have to find the k-th smallest element in the given array using the quick-select algorithm.
+	 * <p>
+	 * Constraints
+	 * <p>
+	 * 1 <= N <= 100000
+	 * <p>
+	 * -10^9 <= arr[i] <= 10^9
+	 * <p>
+	 * 1 <= k <= N
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * An Integer n
+	 * arr1
+	 * arr2..
+	 * n integers
+	 * An integer k
+	 * <p>
+	 * Output
+	 * <p>
+	 * Check the sample output and question video.
+	 * <p>
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * 5
+	 * 7
+	 * -2
+	 * 4
+	 * 1
+	 * 3
+	 * 3
+	 * <p>
+	 * Sample Output
+	 * <p>
+	 * pivot -> 3
+	 * <p>
+	 * Swapping -2 and 7
+	 * <p>
+	 * Swapping 1 and 7
+	 * <p>
+	 * Swapping 3 and 4
+	 * <p>
+	 * pivot index -> 2
+	 * <p>
+	 * 3
+	 *
+	 * @param arr the array
+	 * @param lo the lowest index
+	 * @param hi the highest index
+	 * @param k the smallest element to find
+	 * @return the smallest element
+	 */
+	public static int quickSelect(int[] arr, int lo, int hi, int k)
+	{
+		int pi = arr[hi];
+		int pivot = partition(arr, pi, lo, hi);
+
+		if( k == pivot )
+		{
+			return arr[pivot];
+		}
+		else if( k < pivot )
+		{
+			return quickSelect(arr, lo, pivot - 1, k);
+		}
+		else
+		{
+			return quickSelect(arr, pivot + 1, hi, k);
+		}
 	}
 
 }

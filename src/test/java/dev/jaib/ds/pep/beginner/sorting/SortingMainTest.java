@@ -3,6 +3,7 @@ package dev.jaib.ds.pep.beginner.sorting;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SortingMainTest
 {
@@ -72,5 +73,17 @@ public class SortingMainTest
 		SortingMain.quickSort(givenArr, 0, 5);
 
 		assertArrayEquals(result, givenArr);
+	}
+
+	@Test
+	public void quickSelectTest()
+	{
+		int[] givenArr = {15, 30, 40, 4, 11, 9};
+		int secondSmallest = SortingMain.quickSelect(givenArr, 0, 5, 1);
+		assertEquals(9, secondSmallest);
+
+		int fourthSmallest = SortingMain.quickSelect(givenArr, 0, 5, 3);
+
+		assertEquals(15, fourthSmallest);
 	}
 }
