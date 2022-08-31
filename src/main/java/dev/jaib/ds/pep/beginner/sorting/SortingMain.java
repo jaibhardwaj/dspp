@@ -804,4 +804,82 @@ public class SortingMain
 		}
 	}
 
+	/**
+	 * Count Sort
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given an array(arr) of integers.
+	 * <p>
+	 * 2. You have to sort the given array in increasing order using count sort.
+	 * <p>
+	 * Constraints
+	 * <p>
+	 * 1 <= N <= 10000
+	 * <p>
+	 * -10^8 <= arr[i] <= 10^8
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * An Integer n
+	 * arr1
+	 * arr2..
+	 * n integers
+	 * <p>
+	 * Output
+	 * Check the sample output and question video.
+	 * <p>
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * 5
+	 * 7
+	 * -2
+	 * 4
+	 * 1
+	 * 3
+	 * <p>
+	 * Sample Output
+	 * <p>
+	 * -2
+	 * 1
+	 * 3
+	 * 4
+	 * 7
+	 *
+	 * @param arr the array
+	 * @param min the min value in array
+	 * @param max the max value in array
+	 */
+	public static void countSort(int[] arr, int min, int max)
+	{
+		int range = max - min + 1;
+		int[] ans = new int[arr.length];
+
+		//make frequency arr
+		int[] farr = new int[range];
+		for( int i = 0; i < arr.length; i++ )
+		{
+			farr[arr[i] - min]++;
+		}
+
+		//convert it into prefix sum array
+		for( int i = 1; i < farr.length; i++ )
+		{
+			farr[i] += farr[i - 1];
+		}
+
+		//stable sorting(filling ans array)
+		for( int i = arr.length - 1; i >= 0; i-- )
+		{
+			int pos = farr[arr[i] - min] - 1;
+			ans[pos] = arr[i];
+			farr[arr[i] - min]--;
+		}
+
+		//filling original array with the help of ans array
+		System.arraycopy(ans, 0, arr, 0, arr.length);
+	}
+
 }

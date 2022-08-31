@@ -86,4 +86,14 @@ public class SortingMainTest
 
 		assertEquals(15, fourthSmallest);
 	}
+
+	@Test
+	public void countSortTest()
+	{
+		int[] givenArr = {15, 30, 40, -4, 11, 9};
+		int[] result = {-4, 9, 11, 15, 30, 40};
+		SortingMain.countSort(givenArr, -4, 40);
+
+		assertArrayEquals(result, givenArr);
+	}
 }
