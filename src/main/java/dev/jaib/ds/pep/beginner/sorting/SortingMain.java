@@ -21,28 +21,14 @@ public class SortingMain
 	public static boolean isSmaller(int[] arr, int i, int j)
 	{
 		System.out.println("Comparing " + arr[i] + " and " + arr[j]);
-		if( arr[i] < arr[j] )
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		return arr[i] < arr[j];
 	}
 
 	// return true if jth element is greater than ith element
 	public static boolean isGreater(int[] arr, int j, int i)
 	{
 		System.out.println("Comparing " + arr[i] + " and " + arr[j]);
-		if( arr[i] < arr[j] )
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		return arr[i] < arr[j];
 	}
 
 
@@ -66,12 +52,12 @@ public class SortingMain
 	 * <p>
 	 * An Integer n
 	 * arr1
-	 * arr2..
+	 * arr2
 	 * n integers
 	 * <p>
 	 * Output
 	 * <p>
-	 * Check the sample ouput and question video.
+	 * Check the sample output and question video.
 	 * <p>
 	 * Example
 	 * Sample Input
@@ -159,12 +145,12 @@ public class SortingMain
 	 * <p>
 	 * An Integer n
 	 * arr1
-	 * arr2..
+	 * arr2
 	 * n integers
 	 * <p>
 	 * Output
 	 * <p>
-	 * Check the sample ouput and question video.
+	 * Check the sample output and question video.
 	 * <p>
 	 * Example
 	 * Sample Input
@@ -255,7 +241,7 @@ public class SortingMain
 	 * <p>
 	 * An Integer n
 	 * arr1
-	 * arr2..
+	 * arr2
 	 * n integers
 	 * <p>
 	 * Output
@@ -355,11 +341,11 @@ public class SortingMain
 	 * <p>
 	 * An Integer n
 	 * a1
-	 * a2..n integers
+	 * a2 n integers
 	 * <p>
 	 * An integer m
 	 * b1
-	 * b2..m integers
+	 * b2 m integers
 	 * <p>
 	 *
 	 * Output
@@ -454,7 +440,7 @@ public class SortingMain
 	 * <p>
 	 * An Integer n
 	 * arr1
-	 * arr2..
+	 * arr2
 	 * n integers
 	 * <p>
 	 * Output
@@ -519,9 +505,7 @@ public class SortingMain
 		int[] fsh = mergeSort(arr, lo, mid);
 		int[] ssh = mergeSort(arr, mid + 1, hi);
 
-		int[] fsa = mergeTwoSortedArrays(fsh, ssh);
-
-		return fsa;
+		return mergeTwoSortedArrays(fsh, ssh);
 	}
 
 	/**
@@ -549,7 +533,7 @@ public class SortingMain
 	 * <p>
 	 * An Integer n
 	 * arr1
-	 * arr2..
+	 * arr2
 	 * n integers
 	 * <p>
 	 * An integer pivot
@@ -619,7 +603,7 @@ public class SortingMain
 	 * <p>
 	 * An Integer n
 	 * arr1
-	 * arr2..
+	 * arr2
 	 * n integers
 	 * <p>
 	 * Output
@@ -723,7 +707,7 @@ public class SortingMain
 	 * <p>
 	 * 1. You are given an array(arr) of integers.
 	 * <p>
-	 * 2. You have to find the k-th smallest element in the given array using the quick-select algorithm.
+	 * 2. You have to find the kth smaller element in the given array using the quick-select algorithm.
 	 * <p>
 	 * Constraints
 	 * <p>
@@ -738,7 +722,7 @@ public class SortingMain
 	 * <p>
 	 * An Integer n
 	 * arr1
-	 * arr2..
+	 * arr2
 	 * n integers
 	 * An integer k
 	 * <p>
@@ -816,7 +800,7 @@ public class SortingMain
 	 * <p>
 	 * An Integer n
 	 * arr1
-	 * arr2..
+	 * arr2
 	 * n integers
 	 * <p>
 	 * Output
@@ -851,9 +835,9 @@ public class SortingMain
 
 		//make frequency arr
 		int[] farr = new int[range];
-		for( int i = 0; i < arr.length; i++ )
+		for( int j : arr )
 		{
-			farr[arr[i] - min]++;
+			farr[j - min]++;
 		}
 
 		//convert it into prefix sum array
@@ -862,7 +846,7 @@ public class SortingMain
 			farr[i] += farr[i - 1];
 		}
 
-		//stable sorting(filling ans array)
+		//stable sorting(filling answer array)
 		for( int i = arr.length - 1; i >= 0; i-- )
 		{
 			int pos = farr[arr[i] - min] - 1;
@@ -870,7 +854,7 @@ public class SortingMain
 			farr[arr[i] - min]--;
 		}
 
-		//filling original array with the help of ans array
+		//filling original array with the help of answer array
 		System.arraycopy(ans, 0, arr, 0, arr.length);
 	}
 
@@ -893,11 +877,11 @@ public class SortingMain
 	 * Input
 	 * An Integer n
 	 * arr1
-	 * arr2..
+	 * arr2
 	 * n integers
 	 * <p>
 	 * Output
-	 * Check the sample ouput and question video.
+	 * Check the sample output and question video.
 	 * <p>
 	 * Example
 	 * Sample Input
@@ -920,9 +904,9 @@ public class SortingMain
 	public static void radixSort(int[] arr)
 	{
 		int max = Integer.MIN_VALUE;
-		for( int i = 0; i < arr.length; i++ )
+		for( int j : arr )
 		{
-			max = Math.max(max, arr[i]);
+			max = Math.max(max, j);
 		}
 		//call countSort for every digit from right to left
 		for( int exp = 1; max / exp >= 1; exp *= 10 )
@@ -936,36 +920,33 @@ public class SortingMain
 		int[] ans = new int[arr.length];
 		// make frequency arr
 		int[] farr = new int[10];
-		for( int i = 0; i < arr.length; i++ )
+		for( int j : arr )
 		{
-			farr[(arr[i] / exp) % 10]++;
+			farr[(j / exp) % 10]++;
 		}
 		// convert it into prefix sum array
 		for( int i = 1; i < farr.length; i++ )
 		{
 			farr[i] += farr[i - 1];
 		}
-		// stable sorting(filling ans array)
+		// stable sorting(filling answer array)
 		for( int i = arr.length - 1; i >= 0; i-- )
 		{
 			int pos = farr[(arr[i] / exp) % 10] - 1;
 			ans[pos] = arr[i];
 			farr[(arr[i] / exp) % 10]--;
 		}
-		// filling original array with the help of ans array
-		for( int i = 0; i < arr.length; i++ )
-		{
-			arr[i] = ans[i];
-		}
+		// filling original array with the help of answer array
+		System.arraycopy(ans, 0, arr, 0, arr.length);
 		System.out.print("After sorting on " + exp + " place -> ");
 		print(arr);
 	}
 
 	public static void print(int[] arr)
 	{
-		for( int i = 0; i < arr.length; i++ )
+		for( int j : arr )
 		{
-			System.out.print(arr[i] + " ");
+			System.out.print(j + " ");
 		}
 		System.out.println();
 	}
@@ -991,7 +972,7 @@ public class SortingMain
 	 * <p>
 	 * An Integer N
 	 * arr1
-	 * arr2..
+	 * arr2
 	 * n integers
 	 * <p>
 	 * Output
@@ -1041,26 +1022,103 @@ public class SortingMain
 		String[] ans = new String[arr.length];
 		// make frequency arr
 		int[] farr = new int[range];
-		for( int i = 0; i < arr.length; i++ )
+		for( String s : arr )
 		{
-			farr[Integer.parseInt(arr[i], 10) / div % mod]++;
+			farr[Integer.parseInt(s, 10) / div % mod]++;
 		}
 		// convert it into prefix sum array
 		for( int i = 1; i < farr.length; i++ )
 		{
 			farr[i] += farr[i - 1];
 		}
-		// stable sorting(filling ans array)
+		// stable sorting(filling answer array)
 		for( int i = arr.length - 1; i >= 0; i-- )
 		{
 			int pos = farr[Integer.parseInt(arr[i], 10) / div % mod] - 1;
 			ans[pos] = arr[i];
 			farr[Integer.parseInt(arr[i], 10) / div % mod]--;
 		}
-		// filling original array with the help of ans array
-		for( int i = 0; i < arr.length; i++ )
+		// filling original array with the help of answer array
+		System.arraycopy(ans, 0, arr, 0, arr.length);
+	}
+
+	/**
+	 * Sort 01
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given an array(arr) containing only 0's and 1's.
+	 * <p>
+	 * 2. You have to sort the given array in increasing order and in linear time.
+	 * <p>
+	 * Constraints
+	 * <p>
+	 * 1 <= N <= 10000
+	 * <p>
+	 * arr[i] = 0,1
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * An Integer N
+	 * arr1
+	 * arr2
+	 * n integers
+	 * <p>
+	 * Output
+	 * Check the sample output and question video.
+	 * <p>
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * 5
+	 * <p>
+	 * 0
+	 * 1
+	 * 0
+	 * 1
+	 * 0
+	 * <p>
+	 * Sample Output
+	 * <p>
+	 * Swapping index 0 and index 0
+	 * <p>
+	 * Swapping index 2 and index 1
+	 * <p>
+	 * Swapping index 4 and index 2
+	 * <p>
+	 * 0
+	 * 0
+	 * 0
+	 * 1
+	 * 1
+	 * <p>
+	 * @param arr the given array
+	 */
+	public static void sort01(int[] arr)
+	{
+		// 0 to j-1  ->  All Zeroes //
+		// j to i-1  ->  All One's //
+		/* i to arr.length-1 -> All unknowns */
+
+		int p = 0;
+
+		int i = 0;
+		int j = 0;
+
+		while(i < arr.length)
 		{
-			arr[i] = ans[i];
+			if( arr[i] <= p )
+			{
+				swap(arr, i, j);
+				i++;
+				j++;
+			}
+			else
+			{
+				i++;
+			}
 		}
+
 	}
 }

@@ -116,4 +116,14 @@ public class SortingMainTest
 
 		assertArrayEquals(result, givenArr);
 	}
+
+	@Test
+	public void sort01Test()
+	{
+		int[] givenArr = {0, 1, 0, 1, 0};
+		int[] result = {0, 0, 0, 1, 1};
+		SortingMain.sort01(givenArr);
+
+		assertArrayEquals(result, givenArr);
+	}
 }
