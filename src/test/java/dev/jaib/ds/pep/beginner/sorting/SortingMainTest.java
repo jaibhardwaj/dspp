@@ -96,4 +96,14 @@ public class SortingMainTest
 
 		assertArrayEquals(result, givenArr);
 	}
+
+	@Test
+	public void radixSortTest()
+	{
+		int[] givenArr = {15, 30, 40, 4, 11, 9};
+		int[] result = {4, 9, 11, 15, 30, 40};
+		SortingMain.radixSort(givenArr);
+
+		assertArrayEquals(result, givenArr);
+	}
 }
