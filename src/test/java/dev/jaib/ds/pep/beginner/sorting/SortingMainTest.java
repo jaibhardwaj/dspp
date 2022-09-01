@@ -106,4 +106,14 @@ public class SortingMainTest
 
 		assertArrayEquals(result, givenArr);
 	}
+
+	@Test
+	public void sortDatesTest()
+	{
+		String[] givenArr = {"12041996", "20101996", "05061997", "12041989", "11081987"};
+		String[] result = {"11081987", "12041989", "12041996", "20101996", "05061997"};
+		SortingMain.sortDates(givenArr);
+
+		assertArrayEquals(result, givenArr);
+	}
 }

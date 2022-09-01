@@ -969,4 +969,98 @@ public class SortingMain
 		}
 		System.out.println();
 	}
+
+
+	/**
+	 * Sort Dates
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given an array(arr) of different dates in format DD-MM-YYYY.
+	 * <p>
+	 * 2. You have to sort these dates in increasing order.
+	 * <p>
+	 * Constraints
+	 * <p>
+	 * 1 <= N <= 10000
+	 * <p>
+	 * All dates are between year 0 to year 2500
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * An Integer N
+	 * arr1
+	 * arr2..
+	 * n integers
+	 * <p>
+	 * Output
+	 * <p>
+	 * Check the sample output and question video.
+	 * <p>
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * 5
+	 * <p>
+	 * 12041996
+	 * <p>
+	 * 20101996
+	 * <p>
+	 * 05061997
+	 * <p>
+	 * 12041989
+	 * <p>
+	 * 11081987
+	 * <p>
+	 * <p>
+	 * Sample Output
+	 * <p>
+	 * 11081987
+	 * <p>
+	 * 12041989
+	 * <p>
+	 * 12041996
+	 * <p>
+	 * 20101996
+	 * <p>
+	 * 05061997
+	 * <p>
+	 *
+	 * @param arr the given array
+	 */
+	public static void sortDates(String[] arr)
+	{
+		countSort(arr, 1000000, 100, 32);
+		countSort(arr, 10000, 100, 13);
+		countSort(arr, 1, 10000, 2501);
+	}
+
+	public static void countSort(String[] arr, int div, int mod, int range)
+	{
+		String[] ans = new String[arr.length];
+		// make frequency arr
+		int[] farr = new int[range];
+		for( int i = 0; i < arr.length; i++ )
+		{
+			farr[Integer.parseInt(arr[i], 10) / div % mod]++;
+		}
+		// convert it into prefix sum array
+		for( int i = 1; i < farr.length; i++ )
+		{
+			farr[i] += farr[i - 1];
+		}
+		// stable sorting(filling ans array)
+		for( int i = arr.length - 1; i >= 0; i-- )
+		{
+			int pos = farr[Integer.parseInt(arr[i], 10) / div % mod] - 1;
+			ans[pos] = arr[i];
+			farr[Integer.parseInt(arr[i], 10) / div % mod]--;
+		}
+		// filling original array with the help of ans array
+		for( int i = 0; i < arr.length; i++ )
+		{
+			arr[i] = ans[i];
+		}
+	}
 }
