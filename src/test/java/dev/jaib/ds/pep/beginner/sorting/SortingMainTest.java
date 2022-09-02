@@ -148,4 +148,13 @@ public class SortingMainTest
 		System.out.println(list);
 		assertEquals(count, 3);
 	}
+
+	@Test
+	public void findPivotTest()
+	{
+		int[] givenArr = {15, 16, 19, 21, 23, 24, 1, 2, 12};
+		int p = SortingMain.findPivot(givenArr);
+
+		assertEquals(1, p);
+	}
 }

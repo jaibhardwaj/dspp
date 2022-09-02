@@ -1303,4 +1303,69 @@ public class SortingMain
 
 		return list;
 	}
+
+	/**
+	 * Pivot In Sorted And Rotated Array
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given an array(arr) of distinct integers, which is sorted and rotated around an unknown point.
+	 * <p>
+	 * 2. You have to find the smallest element in O(logN) time-complexity
+	 * <p>
+	 * Constraints
+	 * <p>
+	 * 1 <= N <= 10000
+	 * <p>
+	 * -10^9 <= arr[i] <= 10^9
+	 * <p>
+	 * Format
+	 * Input
+	 * An Integer N
+	 * arr1
+	 * arr2
+	 * n integers
+	 * <p>
+	 * Output
+	 * <p>
+	 * The smallest element
+	 * <p>
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * 9
+	 * 15
+	 * 16
+	 * 19
+	 * 21
+	 * 23
+	 * 24
+	 * 1
+	 * 2
+	 * 12
+	 * <p>
+	 * Sample Output
+	 * <p>
+	 * 1
+	 *
+	 * @param arr the given array
+	 * @return the pivot (smaller number)
+	 */
+	public static int findPivot(int[] arr)
+	{
+		int lo = 0, hi = arr.length - 1;
+		while(lo < hi)
+		{
+			int mid = (lo + hi) / 2;
+			if( arr[mid] > arr[hi] )
+			{
+				lo = mid + 1;
+			}
+			else
+			{
+				hi = mid;
+			}
+		}
+		return arr[lo];
+	}
 }
