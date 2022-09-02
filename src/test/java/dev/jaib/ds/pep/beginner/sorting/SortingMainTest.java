@@ -2,6 +2,8 @@ package dev.jaib.ds.pep.beginner.sorting;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -125,5 +127,25 @@ public class SortingMainTest
 		SortingMain.sort01(givenArr);
 
 		assertArrayEquals(result, givenArr);
+	}
+
+	@Test
+	public void sort012Test()
+	{
+		int[] givenArr = {1, 0, 2, 2, 1, 0, 2, 1, 0, 2};
+		int[] result = {0, 0, 0, 1, 1, 1, 2, 2, 2, 2};
+		SortingMain.sort012(givenArr);
+
+		assertArrayEquals(result, givenArr);
+	}
+
+	@Test
+	public void targetSumPairTest()
+	{
+		int[] givenArr = {7, 15, 3, 18, 6, 4, 19, 2, 12, 11, 9};
+		List<String> list = SortingMain.targetSumPair(givenArr, 15);
+		int count = list.size();
+		System.out.println(list);
+		assertEquals(count, 3);
 	}
 }

@@ -1,5 +1,9 @@
 package dev.jaib.ds.pep.beginner.sorting;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class SortingMain
 {
 	public static void main(String[] args)
@@ -1120,5 +1124,183 @@ public class SortingMain
 			}
 		}
 
+	}
+
+	/**
+	 * Sort 012
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given an array(arr) containing only 0's, 1's, and 2's.
+	 * <p>
+	 * 2. You have to sort the given array in increasing order and in linear time.
+	 * <p>
+	 * Constraints
+	 * <p>
+	 * 1 <= N <= 10000
+	 * <p>
+	 * arr[i] = 0,1,2
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * An Integer N
+	 * arr1
+	 * arr2
+	 * n integers
+	 * <p>
+	 * Output
+	 * Check the sample output and question video.
+	 * <p>
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * 10
+	 * <p>
+	 * 1
+	 * 0
+	 * 2
+	 * 2
+	 * 1
+	 * 0
+	 * 2
+	 * 1
+	 * 0
+	 * 2
+	 * <p>
+	 * Sample Output
+	 * <p>
+	 * Swapping index 1 and index 0
+	 * <p>
+	 * Swapping index 2 and index 9
+	 * <p>
+	 * Swapping index 2 and index 8
+	 * <p>
+	 * Swapping index 2 and index 1
+	 * <p>
+	 * Swapping index 3 and index 7
+	 * <p>
+	 * Swapping index 5 and index 2
+	 * <p>
+	 * Swapping index 6 and index 6
+	 * <p>
+	 * 0
+	 * 0
+	 * 0
+	 * 1
+	 * 1
+	 * 1
+	 * 2
+	 * 2
+	 * 2
+	 * 2
+	 *
+	 * @param arr the given array
+	 */
+	public static void sort012(int[] arr)
+	{
+		int i = 0;
+		int j = 0;
+		int k = arr.length - 1;
+
+		while(i <= k)
+		{
+			if( arr[i] == 0 )
+			{
+				swap(arr, i, j);
+				i++;
+				j++;
+			}
+			else if( arr[i] == 1 )
+			{
+				i++;
+			}
+			else
+			{
+				swap(arr, i, k);
+				k--;
+			}
+		}
+
+	}
+
+	/**
+	 * Target Sum Pair 1
+	 * Easy
+	 * <p>
+	 * 1. You are given an array(arr) of distinct integers and a target. 2. You have to print all the pairs having their sum equal to the target.
+	 * <p>
+	 *
+	 * Constraints
+	 * <p>
+	 * 1 <= N <= 10000 -10^9<= arr[i] <= 10^9
+	 * <p>
+	 *
+	 * Format
+	 * Input
+	 * An Integer N arr1 arr2 n integers An integer target
+	 * <p>
+	 *
+	 * Output
+	 * <p>
+	 * Check the sample output and question video.
+	 * <p>
+	 *
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * 12
+	 * 9
+	 * -48
+	 * 100
+	 * 43
+	 * 84
+	 * 74
+	 * 86
+	 * 34
+	 * -37
+	 * 60
+	 * -29
+	 * 44
+	 * 160
+	 * <p>
+	 * Sample Output
+	 * <p>
+	 * 60, 100
+	 * 74, 86
+	 *
+	 * @param arr the given array
+	 * @param target the target sum
+	 * @return the list of number containing target sum pair
+	 */
+	public static List<String> targetSumPair(int[] arr, int target)
+	{
+		List<String> list = new ArrayList<>();
+
+		Arrays.sort(arr);
+
+		int l = 0;
+		int r = arr.length - 1;
+
+		while(l < r)
+		{
+			if( arr[l] + arr[r] > target )
+			{
+				r--;
+			}
+			else if( arr[l] + arr[r] < target )
+			{
+				l++;
+			}
+			else
+			{
+				System.out.println(arr[l] + ", " + arr[r]);
+				list.add(arr[l] + ", " + arr[r]);
+				l++;
+				r--;
+			}
+		}
+
+		return list;
 	}
 }
