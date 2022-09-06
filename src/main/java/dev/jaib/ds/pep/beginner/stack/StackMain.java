@@ -5,6 +5,11 @@ import java.util.Stack;
 public class StackMain
 {
 
+	public static void main(String[] args)
+	{
+		ngetr(new int[]{5, 3, 8, -2, 7});
+	}
+
 	/**
 	 * Duplicate Brackets
 	 * <p>
@@ -172,6 +177,113 @@ public class StackMain
 			st.pop();
 		}
 		return true;
+	}
+
+
+	/**
+	 * Next Greater Element To The Right
+	 * <p>
+	 * Medium
+	 * <p>
+	 * 1. You are given a number n, representing the size of array a
+	 * <p>
+	 * 2. You are given n numbers, representing elements of array a
+	 * <p>
+	 * 3. You are required to "next greater element on the right" for all elements of array
+	 * <p>
+	 * 4. Input and output is handled for you.
+	 * <p>
+	 * "Next greater element on the right" of an element x is defined as the first element to right of x having value greater than x.
+	 * <p>
+	 * Note -> If an element does not have any element on it's right side greater than it, consider -1 as it's "next greater element on right"
+	 * <p>
+	 * e.g.
+	 * <p>
+	 * for the array [2 5 9 3 1 12 6 8 7]
+	 * <p>
+	 * Next greater for 2 is 5
+	 * <p>
+	 * Next greater for 5 is 9
+	 * <p>
+	 * Next greater for 9 is 12
+	 * <p>
+	 * Next greater for 3 is 12
+	 * <p>
+	 * Next greater for 1 is 12
+	 * <p>
+	 * Next greater for 12 is -1
+	 * <p>
+	 * Next greater for 6 is 8
+	 * <p>
+	 * Next greater for 8 is -1
+	 * <p>
+	 * Next greater for 7 is -1
+	 * <p>
+	 * Constraints
+	 * <p>
+	 * 0 <= n < 10^5
+	 * <p>
+	 * -10^9 <= a[i] <= 10^9
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * Input is managed for you
+	 * <p>
+	 * Output
+	 * <p>
+	 * Output is managed for you
+	 * <p>
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * 5
+	 * 5
+	 * 3
+	 * 8
+	 * -2
+	 * 7
+	 * <p>
+	 * Sample Output
+	 * <p>
+	 * 8
+	 * 8
+	 * -1
+	 * 7
+	 * -1
+	 *
+	 * @param arr the given array
+	 * @return the array containing next greater element on the right for array
+	 */
+	public static int[] ngetr(int[] arr)
+	{
+		Stack<Integer> stack = new Stack<>();
+
+		int[] nge = new int[arr.length];
+
+		nge[arr.length - 1] = -1;
+		stack.push(arr[arr.length - 1]);
+
+		for (int i = arr.length - 2; i >= 0; i--)
+		{
+			while (!stack.empty() && arr[i] >= stack.peek())
+			{
+				stack.pop();
+			}
+
+			if( stack.empty() )
+			{
+				nge[i] = -1;
+			}
+			else
+			{
+				nge[i] = stack.peek();
+			}
+
+			stack.push(arr[i]);
+		}
+
+		return nge;
 	}
 
 }

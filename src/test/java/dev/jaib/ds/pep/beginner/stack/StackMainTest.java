@@ -2,6 +2,7 @@ package dev.jaib.ds.pep.beginner.stack;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -37,5 +38,16 @@ public class StackMainTest
 		String str4 = "([(a+b)+{(c+d)*(e/f)}]";
 		boolean str4Result = StackMain.balancedBrackets(str4);
 		assertFalse(str4Result);
+	}
+
+	@Test
+	public void ngetrTest()
+	{
+		int[] arr1 = {2, 5, 9, 3, 1, 12, 6, 8, 7};
+		int[] result = {5, 9, 12, 12, 12, -1, 8, -1, -1};
+		int[] ans = StackMain.ngetr(arr1);
+
+		assertArrayEquals(result, ans);
+
 	}
 }
