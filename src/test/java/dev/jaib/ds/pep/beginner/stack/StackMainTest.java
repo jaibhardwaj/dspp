@@ -48,6 +48,16 @@ public class StackMainTest
 		int[] ans = StackMain.ngetr(arr1);
 
 		assertArrayEquals(result, ans);
+	}
+
+	@Test
+	public void stockSpanTest()
+	{
+		int[] arr1 = {2, 5, 9, 3, 1, 12, 6, 8, 7};
+		int[] result = {1, 2, 3, 1, 1, 6, 1, 2, 1};
+		int[] ans = StackMain.stockSpan(arr1);
+
+		assertArrayEquals(result, ans);
 
 	}
 }
