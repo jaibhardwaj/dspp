@@ -3,6 +3,7 @@ package dev.jaib.ds.pep.beginner.stack;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -58,6 +59,16 @@ public class StackMainTest
 		int[] ans = StackMain.stockSpan(arr1);
 
 		assertArrayEquals(result, ans);
+
+	}
+
+	@Test
+	public void largestAreaHistogramTest()
+	{
+		int[] arr = {6, 2, 5, 4, 5, 1, 6};
+		int ans = StackMain.largestAreaHistogram(arr);
+
+		assertEquals(12, ans);
 
 	}
 }

@@ -369,4 +369,115 @@ public class StackMain
 		return span;
 	}
 
+	/**
+	 * Largest Area Histogram
+	 * <p>
+	 * Hard
+	 * <p>
+	 * 1. You are given a number n, representing the size of array a
+	 * <p>
+	 * 2. You are given n numbers, representing the height of bars in a bar chart.
+	 * <p>
+	 * 3. You are required to find and print the area of larger rectangle in the histogram.
+	 * <p>
+	 * e.g. for the array [6 2 5 4 5 1 6] -> 12
+	 * <p>
+	 *
+	 * Constraints
+	 * <p>
+	 * 0 <= n < 20 0 <= a[i] <= 10
+	 * <p>
+	 *
+	 * Format
+	 * Input
+	 * <p>
+	 * Input is managed for you
+	 * <p>
+	 *
+	 * Output
+	 * <p>
+	 * A number representing area of larger rectangle in histogram
+	 * <p>
+	 *
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * 7
+	 * 6
+	 * 2
+	 * 5
+	 * 4
+	 * 5
+	 * 1
+	 * 6
+	 * <p>
+	 * Sample Output
+	 * <p>
+	 * 12
+	 *
+	 * @param arr the given bar array
+	 * @return the largest area
+	 */
+	public static int largestAreaHistogram(int[] arr)
+	{
+		int n = arr.length;
+		int[] rb = new int[n]; // nse index to right
+		Stack<Integer> st = new Stack<>();
+		st.push(n - 1);
+		rb[n - 1] = n;
+
+		for( int i = n - 2; i >= 0; i-- )
+		{
+			while(st.size() > 0 && arr[i] <= arr[st.peek()])
+			{
+				st.pop();
+			}
+			if( st.size() > 0 )
+			{
+				rb[i] = st.peek();
+			}
+			else
+			{
+				rb[i] = n;
+			}
+			st.push(i);
+		}
+
+		int[] lb = new int[n]; // nse index to left
+
+		st = new Stack<>();
+		st.push(0);
+		lb[0] = -1;
+
+		for( int i = 1; i < n; i++ )
+		{
+			while(st.size() > 0 && arr[i] <= arr[st.peek()])
+			{
+				st.pop();
+			}
+			if( st.size() > 0 )
+			{
+				lb[i] = st.peek();
+			}
+			else
+			{
+				lb[i] = -1;
+			}
+			st.push(i);
+		}
+
+		int maxArea = 0;
+		for( int i = 0; i < n; i++ )
+		{
+			int width = rb[i] - lb[i] - 1;
+			int area = arr[i] * width;
+
+			if( area > maxArea )
+			{
+				maxArea = area;
+			}
+		}
+
+		return maxArea;
+	}
 }
