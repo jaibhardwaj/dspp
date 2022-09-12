@@ -71,4 +71,15 @@ public class StackMainTest
 		assertEquals(12, ans);
 
 	}
+
+	@Test
+	public void slidingWindowMaximumTest()
+	{
+		int[] arr1 = {2, 5, 9, 3, 1, 12, 6, 8, 7};
+		int[] result = {9, 9, 12, 12, 12, 12};
+		int[] ans = StackMain.slidingWindowMaximum(arr1, 4);
+
+		assertArrayEquals(result, ans);
+
+	}
 }

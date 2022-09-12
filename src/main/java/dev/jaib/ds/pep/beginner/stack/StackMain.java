@@ -480,4 +480,80 @@ public class StackMain
 
 		return maxArea;
 	}
+
+
+	/**
+	 * Sliding Window Maximum
+	 * <p>
+	 * Hard
+	 * <p>
+	 * 1. You are given a number n, representing the size of array a
+	 * <p>
+	 * 2. You are given n numbers, representing the elements of array a
+	 * <p>
+	 * 3. You are given a number k, representing the size of window
+	 * <p>
+	 * 4. You are required to find and print the maximum element in every window of size k
+	 * <p>
+	 *
+	 * e.g.
+	 * <p>
+	 * for the array [2 9 3 8 1 7 12 6 14 4 32 0 7 19 8 12 6] and k = 4, the answer is [9 9 8 12 12 14 14 32 32 32 32 19 19 19]
+	 * <p>
+	 * Constraints
+	 * <p>
+	 * 0 <= n < 100000
+	 * <p>
+	 * -10^9 <= a[i] <= 10^9
+	 * <p>
+	 * 0 < k < n
+	 *
+	 * @param arr the array
+	 * @param k the window size
+	 * @return the sliding window maximum
+	 */
+	public static int[] slidingWindowMaximum(int[] arr, int k)
+	{
+		int[] max = new int[arr.length - k + 1];
+		Stack<Integer> st = new Stack<>();
+
+		int[] nge = new int[arr.length];
+
+		nge[arr.length - 1] = arr.length;
+		st.push(arr.length - 1);
+
+		for( int i = arr.length - 2; i >= 0; i-- )
+		{
+			while(!st.empty() && arr[i] >= arr[st.peek()])
+			{
+				st.pop();
+			}
+
+			if( st.empty() )
+			{
+				nge[i] = arr.length;
+			}
+			else
+			{
+				nge[i] = st.peek();
+			}
+
+			st.push(i);
+		}
+
+
+		for( int i = 0; i <= arr.length - k; i++ )
+		{
+			int j = i;
+
+			while(nge[j] < i + k)
+			{
+				j = nge[j];
+			}
+
+			max[i] = arr[j];
+		}
+
+		return max;
+	}
 }
