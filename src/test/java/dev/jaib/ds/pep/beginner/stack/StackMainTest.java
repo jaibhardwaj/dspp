@@ -92,4 +92,15 @@ public class StackMainTest
 		assertEquals(2, ans);
 
 	}
+
+	@Test
+	public void infixConversionTest()
+	{
+		String exp = "a*(b-c+d)/e";
+		String[] ans = StackMain.infixConversion(exp);
+
+		assertEquals("/*a+-bcde", ans[0]);
+		assertEquals("abc-d+*e/", ans[1]);
+
+	}
 }

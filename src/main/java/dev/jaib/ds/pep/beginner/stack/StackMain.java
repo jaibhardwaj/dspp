@@ -10,6 +10,7 @@ public class StackMain
 		//ngetr(new int[]{5, 3, 8, -2, 7});
 
 		print(stockSpan(new int[]{9, 5, 2, 3, 7, 12, 6, 8, 1}));
+
 	}
 
 
@@ -690,5 +691,140 @@ public class StackMain
 		{
 			return v1 / v2;
 		}
+	}
+
+	/**
+	 * Infix Conversions
+	 * Easy
+	 * <p>
+	 * 1. You are given an infix expression.
+	 * <p>
+	 * 2. You are required to convert it to postfix and print it.
+	 * <p>
+	 * 3. You are required to convert it to prefix and print it.
+	 * <p>
+	 *
+	 * Constraints
+	 * <p>
+	 * 1. Expression is balanced
+	 * <p>
+	 * 2. The only operators used are +, -, *, /
+	 * <p>
+	 * 3. Opening and closing brackets - () - are used to impact precedence of operations
+	 * <p>
+	 * 4. + and - have equal precedence which is less than * and /. * and / also have equal precedence.
+	 * <p>
+	 * 5. In two operators of equal precedence give preference to the one on left.
+	 * <p>
+	 * 6. All operands are single digit numbers.
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * Input is managed for you
+	 * <p>
+	 * Output
+	 * <p>
+	 * postfix
+	 * <p>
+	 * prefix
+	 * <p>
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * a*(b-c+d)/e
+	 * <p>
+	 * Sample Output
+	 * abc-d+*e/
+	 * <p>
+	 * /*a+-bcde
+	 *
+	 * @param exp the infix expression given
+	 * @return the string array containing the prefix and postfix conversion
+	 */
+	public static String[] infixConversion(String exp)
+	{
+		Stack<String> prefix = new Stack<>();
+		Stack<String> postfix = new Stack<>();
+		Stack<Character> operator = new Stack<>();
+
+		for( int i = 0; i < exp.length(); i++ )
+		{
+			char ch = exp.charAt(i);
+
+			if( ch == '(' )
+			{
+				operator.push(ch);
+			}
+			else if( (ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') )
+			{
+				prefix.push(ch + "");
+				postfix.push(ch + "");
+			}
+			else if( ch == ')' )
+			{
+				while(operator.peek() != '(')
+				{
+					char op = operator.pop();
+					String preStr = evalExpPre(prefix, op);
+					String postStr = evalExpPost(postfix, op);
+
+					prefix.push(preStr);
+					postfix.push(postStr);
+				}
+
+				operator.pop();
+			}
+			else if( ch == '+' || ch == '-' || ch == '*' || ch == '/' )
+			{
+				while(!operator.isEmpty() && operator.peek() != '(' && precedence(operator.peek()) >= precedence(ch))
+				{
+					char op = operator.pop();
+					String preStr = evalExpPre(prefix, op);
+					String postStr = evalExpPost(postfix, op);
+
+					prefix.push(preStr);
+					postfix.push(postStr);
+				}
+
+				operator.push(ch);
+			}
+			else
+			{
+				operator.push(ch);
+			}
+		}
+
+		while(!operator.isEmpty())
+		{
+			char op = operator.pop();
+			String preStr = evalExpPre(prefix, op);
+			String postStr = evalExpPost(postfix, op);
+
+			prefix.push(preStr);
+			postfix.push(postStr);
+		}
+
+		String[] conversions = new String[2];
+		conversions[0] = prefix.peek();
+		conversions[1] = postfix.peek();
+
+		return conversions;
+	}
+
+	public static String evalExpPre(Stack<String> prefix, char op)
+	{
+		String v2 = prefix.pop();
+		String v1 = prefix.pop();
+
+		return op + v1 + v2;
+	}
+
+	public static String evalExpPost(Stack<String> postfix, char op)
+	{
+		String v2 = postfix.pop();
+		String v1 = postfix.pop();
+
+		return v1 + v2 + op;
 	}
 }
