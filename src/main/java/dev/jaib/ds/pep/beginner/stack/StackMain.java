@@ -556,4 +556,139 @@ public class StackMain
 
 		return max;
 	}
+
+	/**
+	 * Infix Evaluation
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given an infix expression.
+	 * <p>
+	 * 2. You are required to evaluate and print its value.
+	 * <p>
+	 * Constraints
+	 * <p>
+	 * 1. Expression is balanced
+	 * <p>
+	 * 2. The only operators used are +, -, *, /
+	 * <p>
+	 * 3. Opening and closing brackets - () - are used to impact precedence of operations
+	 * <p>
+	 * 4. + and - have equal precedence which is less than * and /. * and / also have equal precedence.
+	 * <p>
+	 * 5. In two operators of equal precedence give preference to the one on left.
+	 * <p>
+	 * 6. All operands are single digit numbers.
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * Input is managed for you
+	 * <p>
+	 * Output
+	 * Value of infix expression
+	 * <p>
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * 2 + 6 * 4 / 8 - 3
+	 * <p>
+	 * Sample Output
+	 * 2
+	 *
+	 * @param exp the given infix expression
+	 * @return the infix expression evaluation
+	 */
+	public static int infixEvaluation(String exp)
+	{
+		Stack<Integer> oprand = new Stack<>();
+		Stack<Character> operator = new Stack<>();
+
+		for( int i = 0; i < exp.length(); i++ )
+		{
+			char ch = exp.charAt(i);
+
+			if( Character.isDigit(ch) )
+			{
+				oprand.push(ch - '0');
+			}
+			else if( ch == '(' )
+			{
+				operator.push(ch);
+			}
+			else if( ch == ')' )
+			{
+				while(operator.peek() != '(')
+				{
+					evaluateExp(oprand, operator);
+				}
+
+				operator.pop();
+			}
+			else if( ch == '+' || ch == '-' || ch == '*' || ch == '/' )
+			{
+				while(!operator.empty() && operator.peek() != '(' &&
+						precedence(ch) <= precedence(operator.peek()))
+				{
+					evaluateExp(oprand, operator);
+				}
+
+				operator.push(ch);
+			}
+			else
+			{
+				operator.push(ch);
+			}
+		}
+
+		while(!operator.empty())
+		{
+			evaluateExp(oprand, operator);
+		}
+
+		return oprand.peek();
+	}
+
+	public static void evaluateExp(Stack<Integer> oprand, Stack<Character> operator)
+	{
+		int v2 = oprand.pop();
+		int v1 = oprand.pop();
+		char op = operator.pop();
+
+		int v = operation(v1, v2, op);
+
+		oprand.push(v);
+	}
+
+	public static int precedence(char ch)
+	{
+		if( ch == '+' || ch == '-' )
+		{
+			return 1;
+		}
+		else
+		{
+			return 2;
+		}
+	}
+
+	public static int operation(int v1, int v2, char ch)
+	{
+		if( ch == '+' )
+		{
+			return v1 + v2;
+		}
+		else if( ch == '-' )
+		{
+			return v1 - v2;
+		}
+		else if( ch == '*' )
+		{
+			return v1 * v2;
+		}
+		else
+		{
+			return v1 / v2;
+		}
+	}
 }

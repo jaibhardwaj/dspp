@@ -82,4 +82,14 @@ public class StackMainTest
 		assertArrayEquals(result, ans);
 
 	}
+
+	@Test
+	public void infixEvaluationTest()
+	{
+		String exp = "2+6*4/8-3";
+		int ans = StackMain.infixEvaluation(exp);
+
+		assertEquals(2, ans);
+
+	}
 }
