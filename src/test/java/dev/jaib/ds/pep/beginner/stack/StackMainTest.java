@@ -59,7 +59,6 @@ public class StackMainTest
 		int[] ans = StackMain.stockSpan(arr1);
 
 		assertArrayEquals(result, ans);
-
 	}
 
 	@Test
@@ -69,7 +68,6 @@ public class StackMainTest
 		int ans = StackMain.largestAreaHistogram(arr);
 
 		assertEquals(12, ans);
-
 	}
 
 	@Test
@@ -80,7 +78,6 @@ public class StackMainTest
 		int[] ans = StackMain.slidingWindowMaximum(arr1, 4);
 
 		assertArrayEquals(result, ans);
-
 	}
 
 	@Test
@@ -90,7 +87,6 @@ public class StackMainTest
 		int ans = StackMain.infixEvaluation(exp);
 
 		assertEquals(2, ans);
-
 	}
 
 	@Test
@@ -101,7 +97,6 @@ public class StackMainTest
 
 		assertEquals("/*a+-bcde", ans[0]);
 		assertEquals("abc-d+*e/", ans[1]);
-
 	}
 
 	@Test
@@ -113,6 +108,16 @@ public class StackMainTest
 		assertEquals("2", ans[0]);
 		assertEquals("((2+((6*4)/8))-3)", ans[1]);
 		assertEquals("-+2/*6483", ans[2]);
+	}
 
+	@Test
+	public void prefixEvaluationAndConversionTest()
+	{
+		String exp = "-+2/*6483";
+		String[] ans = StackMain.prefixEvaluationAndConversion(exp);
+
+		assertEquals("2", ans[0]);
+		assertEquals("((2+((6*4)/8))-3)", ans[1]);
+		assertEquals("264*8/+3-", ans[2]);
 	}
 }
