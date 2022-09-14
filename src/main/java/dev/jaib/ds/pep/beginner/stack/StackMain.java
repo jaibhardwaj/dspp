@@ -827,4 +827,100 @@ public class StackMain
 
 		return v1 + v2 + op;
 	}
+
+	/**
+	 * Postfix Evaluation And Conversions
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given a postfix expression.
+	 * <p>
+	 * 2. You are required to evaluate it and print its value.
+	 * <p>
+	 * 3. You are required to convert it to infix and print it.
+	 * <p>
+	 * 4. You are required to convert it to prefix and print it.
+	 * <p>
+	 * Note -> Use brackets in infix expression for indicating precedence. Check sample input output for more details.
+	 * <p>
+	 * Constraints
+	 * <p>
+	 * 1. Expression is a valid postfix expression
+	 * <p>
+	 * 2. The only operators used are +, -, *, /
+	 * <p>
+	 * 3. All operands are single digit numbers.
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * Input is managed for you
+	 * <p>
+	 * Output
+	 * <p>
+	 * value, a number
+	 * <p>
+	 * infix
+	 * <p>
+	 * prefix
+	 * <p>
+	 * Example
+	 * <p>
+	 * Sample Input
+	 * <p>
+	 * 264*8/+3-
+	 * <p>
+	 * Sample Output
+	 * <p>
+	 * 2
+	 * <p>
+	 * ((2+((6*4)/8))-3)
+	 * <p>
+	 * -+2/*6483
+	 *
+	 * @param exp the given postfix expression
+	 * @return the string array containing the evaluation, prefix and infix conversion
+	 */
+	public static String[] postfixEvaluationAndConversion(String exp)
+	{
+		Stack<String> infix = new Stack<>();
+		Stack<String> prefix = new Stack<>();
+		Stack<Integer> eval = new Stack<>();
+
+		for( int i = 0; i < exp.length(); i++ )
+		{
+			char ch = exp.charAt(i);
+
+			if( Character.isDigit(ch) )
+			{
+				infix.push(ch + "");
+				prefix.push(ch + "");
+				eval.push(ch - '0');
+			}
+			else
+			{
+				int ev2 = eval.pop();
+				int ev1 = eval.pop();
+				int ev = operation(ev1, ev2, ch);
+				eval.push(ev);
+
+				String prev2 = prefix.pop();
+				String prev1 = prefix.pop();
+				String prev = ch + prev1 + prev2;
+				prefix.push(prev);
+
+				String inv2 = infix.pop();
+				String inv1 = infix.pop();
+				String inv = "(" + inv1 + ch + inv2 + ")";
+				infix.push(inv);
+			}
+		}
+
+		String[] conversions = new String[3];
+		conversions[0] = eval.peek() + "";
+		conversions[1] = infix.peek();
+		conversions[2] = prefix.peek();
+
+		return conversions;
+	}
 }

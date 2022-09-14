@@ -103,4 +103,16 @@ public class StackMainTest
 		assertEquals("abc-d+*e/", ans[1]);
 
 	}
+
+	@Test
+	public void postfixEvaluationAndConversionTest()
+	{
+		String exp = "264*8/+3-";
+		String[] ans = StackMain.postfixEvaluationAndConversion(exp);
+
+		assertEquals("2", ans[0]);
+		assertEquals("((2+((6*4)/8))-3)", ans[1]);
+		assertEquals("-+2/*6483", ans[2]);
+
+	}
 }
