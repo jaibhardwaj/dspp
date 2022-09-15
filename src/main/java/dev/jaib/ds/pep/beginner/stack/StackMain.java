@@ -1019,4 +1019,99 @@ public class StackMain
 
 		return conversions;
 	}
+
+	/**
+	 * Celebrity Problem
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given a number n, representing the number of people in party
+	 * <p>
+	 * 2. You are given n strings of n length containing 0's and 1's
+	 * <p>
+	 * 3. If there is a '1' in ith row, jth spot, then person i knows about person j.
+	 * <p>
+	 * 4. A celebrity is defined as somebody who knows no other person than himself but everybody else knows him.
+	 * <p>
+	 * 5. If there is a celebrity print it's index otherwise print "none".
+	 * <p>
+	 * Note -> There can be only one celebrity. Think why?
+	 * <p>
+	 * Constraints
+	 * <p>
+	 * 1 <= n <= 10^4
+	 * <p>
+	 * e1, e2, .. n * n elements belongs to the set (0, 1)
+	 * <p>
+	 * Format
+	 * Input
+	 * <p>
+	 * Input is managed for you
+	 * <p>
+	 * Output
+	 * <p>
+	 * Index of celebrity or none
+	 * <p>
+	 * Example
+	 * <p>
+	 * Sample Input
+	 * <p>
+	 * 4
+	 * <p>
+	 * 0000
+	 * <p>
+	 * 1011
+	 * <p>
+	 * 1101
+	 * <p>
+	 * 1110
+	 * <p>
+	 * Sample Output
+	 * <p>
+	 * 0
+	 *
+	 * @param arr the given matrix of 0 and 1
+	 * @return the celebrity position or -1
+	 */
+	public static int findCelebrity(int[][] arr)
+	{
+		// if a celebrity is there print its index (not position),
+		// if there is not then print "none"
+		Stack<Integer> st = new Stack<>();
+
+		for( int i = 0; i < arr.length; i++ )
+		{
+			st.push(i);
+		}
+
+		while(st.size() >= 2)
+		{
+			int i = st.pop();
+			int j = st.pop();
+
+			if( arr[i][j] == 1 )
+			{
+				st.push(j);
+			}
+			else
+			{
+				st.push(i);
+			}
+		}
+
+		int pot = st.pop();
+
+		for( int i = 0; i < arr.length; i++ )
+		{
+			if( i != pot )
+			{
+				if( arr[i][pot] == 0 || arr[pot][i] == 1 )
+				{
+					return -1;
+				}
+			}
+		}
+
+		return pot;
+	}
 }

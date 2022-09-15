@@ -120,4 +120,17 @@ public class StackMainTest
 		assertEquals("((2+((6*4)/8))-3)", ans[1]);
 		assertEquals("264*8/+3-", ans[2]);
 	}
+	@Test
+	public void findCelebrityTest()
+	{
+		int[][] arr1 = {{0, 0, 0, 0}, {1,0, 1, 1}, {1, 1, 0, 1}, {1, 1, 1, 0}};
+		int ans1 = StackMain.findCelebrity(arr1);
+
+		assertEquals(0, ans1);
+
+		int[][] arr2 = {{0, 0, 0, 0}, {1,0, 1, 1}, {0, 1, 0, 1}, {1, 1, 1, 0}};
+		int ans2 = StackMain.findCelebrity(arr2);
+
+		assertEquals(-1, ans2);
+	}
 }
