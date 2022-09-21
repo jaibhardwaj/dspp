@@ -1177,7 +1177,7 @@ public class StackMain
 	 * <p>
 	 * 27 30
 	 * <p>
-	 * Then the output of merged meetings will belongs
+	 * Then the output of merged meetings will belong
 	 * <p>
 	 * 1 12
 	 * <p>
@@ -1299,5 +1299,77 @@ public class StackMain
 				return this.et - other.et;
 			}
 		}
+	}
+
+	/**
+	 * Smallest Number Following Pattern
+	 * <p>
+	 * Easy
+	 * <p>
+	 * 1. You are given a pattern of upto 8 length containing characters 'i' and 'd'.
+	 * <p>
+	 * 2. 'd' stands for decreasing and 'i' stands for increasing
+	 * <p>
+	 * 3. You have to print the smallest number, using the digits 1 to 9 only without repetition, such that the digit decreases following a d and increases following an i.
+	 * <p>
+	 * e.g. d -> 21 i -> 12 ddd -> 4321 iii -> 1234 dddiddd -> 43218765 iiddd -> 126543
+	 * <p>
+	 *
+	 * Constraints
+	 * 0 < str.length  <= 8 str contains only 'd' and 'i'
+	 * <p>
+	 *
+	 * Format
+	 * Input
+	 * <p>
+	 * Input is managed for you
+	 * <p>
+	 *
+	 * Output
+	 * <p>
+	 * Smallest sequence of digits (from 1 to 9) without duplicate and following the pattern
+	 * <p>
+	 *
+	 * Example
+	 * Sample Input
+	 * <p>
+	 * ddddiiii
+	 * <p>
+	 * Sample Output
+	 * <p>
+	 * 543216789
+	 *
+	 * @param str the pattern string
+	 * @return the smallest number pattern
+	 */
+	public static String smallestNumberFollowingPatter(String str)
+	{
+		StringBuilder builder = new StringBuilder();
+		Stack<Integer> st = new Stack<>();
+		int j = 1;
+
+		for( int i = 0; i < str.length(); i++ )
+		{
+			char ch = str.charAt(i);
+
+			st.push(j);
+			j++;
+
+			if( ch != 'd' )
+			{
+				while(!st.empty())
+				{
+					builder.append(st.pop());
+				}
+			}
+		}
+
+		st.push(j); // for last number
+		while(st.size() > 0)
+		{
+			builder.append(st.pop());
+		}
+
+		return builder.toString();
 	}
 }

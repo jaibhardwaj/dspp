@@ -133,4 +133,12 @@ public class StackMainTest
 
 		assertEquals(-1, ans2);
 	}
+
+	@Test
+	public void smallestNumberFollowingPatterTest()
+	{
+		String pattern = "ddddiiii";
+		final String result = StackMain.smallestNumberFollowingPatter(pattern);
+		assertEquals("543216789", result);
+	}
 }
