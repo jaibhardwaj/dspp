@@ -7,7 +7,7 @@ import java.util.Queue;
  * Queue To Stack Adapter - Push Efficient
  * Easy
  * <p>
- * 1. You are required to complete the code of our QueueToStackAdapter class.
+ * 1. You are required to complete the code of our QueueToStackAdapterPushEfficient class.
  * <p>
  * 2. As data members you've two queues available - mainQ and helperQ. mainQ is to contain data and helperQ is to assist in operations.
  * <p>
@@ -28,12 +28,12 @@ import java.util.Queue;
  * Note -> push and size should work in constant time. pop and top should work in linear time.
  *
  */
-public class QueueToStackAdapter
+public class QueueToStackAdapterPushEfficient
 {
 	Queue<Integer> mainQ;
 	Queue<Integer> helperQ;
 
-	public QueueToStackAdapter()
+	public QueueToStackAdapterPushEfficient()
 	{
 		mainQ = new ArrayDeque<>();
 		helperQ = new ArrayDeque<>();
