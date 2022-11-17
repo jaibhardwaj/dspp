@@ -29,4 +29,27 @@ class StackToQueueAdapterTest
 
 		assertEquals(3, adapter.size());
 	}
+
+	@Test
+	public void stackToQueueAdapterTestRemoveEfficient()
+	{
+		StackToQueueAdapterRemoveEfficient adapter = new StackToQueueAdapterRemoveEfficient();
+		adapter.add(1);
+		adapter.add(2);
+		adapter.add(3);
+		adapter.add(4);
+		adapter.add(5);
+
+		assertEquals(5, adapter.size());
+
+		assertEquals(1, adapter.peek());
+
+		assertEquals(1, adapter.remove());
+
+		assertEquals(2, adapter.remove());
+
+		assertEquals(3, adapter.peek());
+
+		assertEquals(3, adapter.size());
+	}
 }
