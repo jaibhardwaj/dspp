@@ -23,6 +23,29 @@ public class LinkedList
 		size++;
 	}
 
+	public int removeFirst()
+	{
+		if( size == 0 )
+		{
+			System.out.println("List is empty!");
+			return -1;
+		}
+
+		int data = head.data;
+
+		if( size == 1 )
+		{
+			head = tail = null;
+		}
+		else
+		{
+			head = head.next;
+		}
+
+		size--;
+		return data;
+	}
+
 
 	@Override
 	public String toString()
@@ -33,7 +56,7 @@ public class LinkedList
 
 		while(temp != null)
 		{
-			builder.append(temp.item).append(" ");
+			builder.append(temp.data).append(" ");
 			temp = temp.next;
 		}
 
@@ -42,12 +65,12 @@ public class LinkedList
 
 	private static class Node
 	{
-		int item;
+		int data;
 		Node next;
 
-		Node(int element, Node next)
+		Node(int data, Node next)
 		{
-			this.item = element;
+			this.data = data;
 			this.next = next;
 		}
 	}
