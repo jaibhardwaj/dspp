@@ -113,4 +113,23 @@ class LinkedListTest
 		assertEquals(20, linkedList.getAt(7));
 		assertEquals(-1, linkedList.getAt(20));
 	}
+
+	@Test
+	void removeLastTest()
+	{
+
+		LinkedList linkedList = new LinkedList();
+		linkedList.addLast(1);
+		linkedList.addLast(2);
+		linkedList.addLast(3);
+
+		System.out.println(linkedList);
+
+		assertEquals(3, linkedList.removeLast());
+		assertEquals(2, linkedList.removeLast());
+		System.out.println(linkedList);
+		assertEquals(1, linkedList.removeLast());
+		System.out.println(linkedList);
+		assertEquals(-1, linkedList.removeLast());
+	}
 }

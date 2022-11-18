@@ -144,6 +144,36 @@ public class LinkedList
 		return temp.data;
 	}
 
+	public int removeLast()
+	{
+		if( size == 0 )
+		{
+			System.out.println("List is empty");
+			return -1;
+		}
+
+		int data = tail.data;
+
+		if( size == 1 )
+		{
+			head = tail = null;
+		}
+		else
+		{
+			Node temp = head;
+			while(temp.next != tail)
+			{
+				temp = temp.next;
+			}
+
+			temp.next = null;
+			tail = temp;
+		}
+		size--;
+
+		return data;
+	}
+
 
 	@Override
 	public String toString()
