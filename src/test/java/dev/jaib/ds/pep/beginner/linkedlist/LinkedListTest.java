@@ -79,4 +79,15 @@ class LinkedListTest
 		assertEquals(5, linkedList.getAt(4));
 		assertEquals(-1, linkedList.getAt(5));
 	}
+
+	@Test
+	void addFirstTest()
+	{
+		LinkedList linkedList = new LinkedList();
+		linkedList.addFirst(1);
+		linkedList.addFirst(2);
+		linkedList.addFirst(3);
+
+		System.out.println(linkedList);
+	}
 }

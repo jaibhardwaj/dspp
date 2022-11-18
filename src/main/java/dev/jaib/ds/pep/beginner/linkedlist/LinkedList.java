@@ -23,6 +23,21 @@ public class LinkedList
 		size++;
 	}
 
+	public void addFirst(int val)
+	{
+		Node temp = new Node(val, null);
+		if( size == 0 )
+		{
+			head = tail = temp;
+		}
+		else
+		{
+			temp.next = head;
+			head = temp;
+		}
+		size++;
+	}
+
 	public int removeFirst()
 	{
 		if( size == 0 )
