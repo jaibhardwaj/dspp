@@ -35,4 +35,48 @@ class LinkedListTest
 		assertEquals(3, linkedList.removeFirst());
 		assertEquals(-1, linkedList.removeFirst());
 	}
+
+	@Test
+	public void getFirstTest()
+	{
+		LinkedList linkedList = new LinkedList();
+		linkedList.addLast(1);
+		linkedList.addLast(2);
+		linkedList.addLast(3);
+
+		assertEquals(1, linkedList.getFirst());
+		assertEquals(1, linkedList.removeFirst());
+		assertEquals(2, linkedList.getFirst());
+	}
+
+	@Test
+	public void getLastTest()
+	{
+		LinkedList linkedList = new LinkedList();
+		linkedList.addLast(1);
+		linkedList.addLast(2);
+		linkedList.addLast(3);
+
+		assertEquals(3, linkedList.getLast());
+		assertEquals(1, linkedList.removeFirst());
+		assertEquals(2, linkedList.removeFirst());
+		assertEquals(3, linkedList.removeFirst());
+		assertEquals(-1, linkedList.getLast());
+	}
+
+	@Test
+	public void getAtIndexTest()
+	{
+		LinkedList linkedList = new LinkedList();
+		linkedList.addLast(1);
+		linkedList.addLast(2);
+		linkedList.addLast(3);
+		linkedList.addLast(4);
+		linkedList.addLast(5);
+
+		assertEquals(1, linkedList.getAt(0));
+		assertEquals(2, linkedList.getAt(1));
+		assertEquals(5, linkedList.getAt(4));
+		assertEquals(-1, linkedList.getAt(5));
+	}
 }

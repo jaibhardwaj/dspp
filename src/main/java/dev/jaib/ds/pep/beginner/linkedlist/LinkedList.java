@@ -47,6 +47,54 @@ public class LinkedList
 	}
 
 
+	public int getFirst()
+	{
+		if( size == 0 )
+		{
+			System.out.println("List is empty!");
+			return -1;
+		}
+
+		return head.data;
+	}
+
+	public int getLast()
+	{
+		if( size == 0 )
+		{
+			System.out.println("List is empty!");
+			return -1;
+		}
+
+		return tail.data;
+	}
+
+	public int getAt(int index)
+	{
+		if( size == 0 )
+		{
+			System.out.println("List is empty!");
+			return -1;
+		}
+
+		if( index >= size )
+		{
+			System.out.println("Invalid Argument!");
+			return -1;
+		}
+
+		Node temp = head;
+		int i = 0;
+		while(i != index)
+		{
+			temp = temp.next;
+			i++;
+		}
+
+		return temp.data;
+	}
+
+
 	@Override
 	public String toString()
 	{
