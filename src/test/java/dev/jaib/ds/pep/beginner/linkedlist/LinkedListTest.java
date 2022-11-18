@@ -90,4 +90,27 @@ class LinkedListTest
 
 		System.out.println(linkedList);
 	}
+
+	@Test
+	public void addAtIndexTest()
+	{
+		LinkedList linkedList = new LinkedList();
+		linkedList.addLast(1);
+		linkedList.addLast(2);
+		linkedList.addLast(3);
+		linkedList.addLast(4);
+		linkedList.addLast(5);
+
+		linkedList.addAt(0, 10);
+		linkedList.addAt(3, 8);
+		linkedList.addAt(7, 20);
+
+		System.out.println(linkedList);
+		assertEquals(-1, linkedList.getAt(-1));
+		assertEquals(10, linkedList.getAt(0));
+		assertEquals(1, linkedList.getAt(1));
+		assertEquals(8, linkedList.getAt(3));
+		assertEquals(20, linkedList.getAt(7));
+		assertEquals(-1, linkedList.getAt(20));
+	}
 }

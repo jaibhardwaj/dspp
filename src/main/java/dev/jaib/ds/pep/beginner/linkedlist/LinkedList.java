@@ -9,7 +9,8 @@ public class LinkedList
 
 	public void addLast(int val)
 	{
-		Node node = new Node(val, null);
+		Node node = new Node();
+		node.data = val;
 
 		if( size == 0 )
 		{
@@ -25,7 +26,8 @@ public class LinkedList
 
 	public void addFirst(int val)
 	{
-		Node temp = new Node(val, null);
+		Node temp = new Node();
+		temp.data = val;
 		if( size == 0 )
 		{
 			head = tail = temp;
@@ -36,6 +38,39 @@ public class LinkedList
 			head = temp;
 		}
 		size++;
+	}
+
+	public void addAt(int idx, int val)
+	{
+		if( idx < 0 || idx > size )
+		{
+			System.out.println("Invalid arguments");
+			return;
+		}
+
+		if( idx == 0 )
+		{
+			addFirst(val);
+		}
+		else if( idx == size )
+		{
+			addLast(val);
+		}
+		else
+		{
+			Node node = new Node();
+			node.data = val;
+			Node temp = head;
+
+			for( int i = 0; i < idx - 1; i++ )
+			{
+				temp = temp.next;
+			}
+
+			node.next = temp.next;
+			temp.next = node;
+			size++;
+		}
 	}
 
 	public int removeFirst()
@@ -92,7 +127,7 @@ public class LinkedList
 			return -1;
 		}
 
-		if( index >= size )
+		if( index < 0 || index >= size )
 		{
 			System.out.println("Invalid Argument!");
 			return -1;
@@ -130,11 +165,5 @@ public class LinkedList
 	{
 		int data;
 		Node next;
-
-		Node(int data, Node next)
-		{
-			this.data = data;
-			this.next = next;
-		}
 	}
 }
