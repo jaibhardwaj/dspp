@@ -132,4 +132,23 @@ class LinkedListTest
 		System.out.println(linkedList);
 		assertEquals(-1, linkedList.removeLast());
 	}
+
+	@Test
+	public void removeAtIndexTest()
+	{
+		LinkedList linkedList = new LinkedList();
+		linkedList.addLast(1);
+		linkedList.addLast(2);
+		linkedList.addLast(3);
+		linkedList.addLast(4);
+		linkedList.addLast(5);
+
+		System.out.println(linkedList);
+
+		assertEquals(-1, linkedList.removeAt(-1));
+		assertEquals(1, linkedList.removeAt(0));
+		assertEquals(4, linkedList.removeAt(2));
+		assertEquals(5, linkedList.removeAt(2));
+		assertEquals(2, linkedList.size());
+	}
 }

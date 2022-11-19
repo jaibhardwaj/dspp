@@ -174,6 +174,59 @@ public class LinkedList
 		return data;
 	}
 
+	public int removeAt(int idx)
+	{
+		if( size == 0 )
+		{
+			System.out.println("List is empty");
+			return -1;
+		}
+
+		if( idx < 0 || idx >= size )
+		{
+			System.out.println("Invalid arguments");
+			return -1;
+		}
+
+		int data;
+
+		if( size == 1 )
+		{
+			data = head.data;
+			head = tail = null;
+			size--;
+			return data;
+		}
+		else if( idx == 0 )
+		{
+			return removeFirst();
+		}
+		else if( idx == size - 1 )
+		{
+			return removeLast();
+		}
+		else
+		{
+			Node temp = head;
+			int i = 0;
+			while(i != idx - 1)
+			{
+				i++;
+				temp = temp.next;
+			}
+
+			data = temp.next.data;
+			temp.next = temp.next.next;
+			size--;
+		}
+
+		return data;
+	}
+
+	public int size()
+	{
+		return size;
+	}
 
 	@Override
 	public String toString()
