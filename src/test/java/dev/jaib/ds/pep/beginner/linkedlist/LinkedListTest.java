@@ -151,4 +151,19 @@ class LinkedListTest
 		assertEquals(5, linkedList.removeAt(2));
 		assertEquals(2, linkedList.size());
 	}
+
+	@Test
+	public void reverseDITest()
+	{
+		LinkedList linkedList = new LinkedList();
+		linkedList.addLast(1);
+		linkedList.addLast(2);
+		linkedList.addLast(3);
+		linkedList.addLast(4);
+		linkedList.addLast(5);
+
+		System.out.println(linkedList);
+		linkedList.reverseDI();
+		System.out.println(linkedList);
+	}
 }

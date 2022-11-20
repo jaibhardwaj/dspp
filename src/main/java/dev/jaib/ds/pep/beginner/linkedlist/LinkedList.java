@@ -223,6 +223,73 @@ public class LinkedList
 		return data;
 	}
 
+	public void reverseDI()
+	{
+		int[] arr = new int[size];
+
+		Node temp = head;
+
+		int i = 0;
+		while(temp != null)
+		{
+			arr[i] = temp.data;
+			i++;
+			temp = temp.next;
+		}
+
+		temp = head;
+
+		for( int j = arr.length - 1; j >= 0; j-- )
+		{
+			temp.data = arr[j];
+			temp = temp.next;
+		}
+	}
+
+	public void reverseDI2()
+	{
+		int li = 0;
+		int ri = size - 1;
+
+		while(li < ri)
+		{
+			Node left = getNodeAt(li);
+			Node right = getNodeAt(ri);
+
+			int temp = left.data;
+			left.data = right.data;
+			right.data = temp;
+
+			li++;
+			ri--;
+		}
+	}
+
+	private Node getNodeAt(int index)
+	{
+		if( size == 0 )
+		{
+			System.out.println("List is empty!");
+			return null;
+		}
+
+		if( index < 0 || index >= size )
+		{
+			System.out.println("Invalid Argument!");
+			return null;
+		}
+
+		Node temp = head;
+		int i = 0;
+		while(i != index)
+		{
+			temp = temp.next;
+			i++;
+		}
+
+		return temp;
+	}
+
 	public int size()
 	{
 		return size;
